@@ -18,7 +18,8 @@ public class Training1 {
 
     public static void test() {
         // TEST PALINDROME
-        Palindrom.test();
+//        Palindrom.test();
+        PostFixSolver.test();
     }
 
 }
