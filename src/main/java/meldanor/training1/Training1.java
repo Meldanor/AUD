@@ -19,7 +19,8 @@ public class Training1 {
     public static void test() {
         // TEST PALINDROME
 //        Palindrom.test();
-        PostFixSolver.test();
+//        PostFixSolver.test();
+        TailRecursion.test();
     }
 
 }
