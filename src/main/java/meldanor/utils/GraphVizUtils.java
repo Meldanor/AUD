@@ -31,7 +31,7 @@ public class GraphVizUtils {
      *            The iterable list
      */
     public static void visualizeSingleLinkedList(Iterable<?> list) {
-        visualizeSingleLinkedList(list, new File("out.png"), Format.PNG);
+        visualizeSingleLinkedList(list, new File("target/out.png"), Format.PNG);
     }
 
     /**
@@ -110,7 +110,7 @@ public class GraphVizUtils {
      *            The iterable list
      */
     public static void visualizeDoubleLinkedList(Iterable<?> list) {
-        visualizeDoubleLinkedList(list, new File("out.png"), Format.PNG);
+        visualizeDoubleLinkedList(list, new File("target/out.png"), Format.PNG);
     }
 
     /**
