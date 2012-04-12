@@ -1,4 +1,4 @@
-package meldanor.other;
+package meldanor.utils;
 
 // GraphViz.java - a simple API to call dot from Java programs
 
