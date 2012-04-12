@@ -82,7 +82,7 @@ public class GraphVizUtils {
             Object t2 = iter.next();
             while (iter.hasNext()) {
                 t1 = iter.next();
-                gv.addln(t2.toString() + " -> " + t1.toString() + ";");
+                gv.addln(t2.toString() + " -> " + t1.toString() + "[label=\"next\"];");
                 t2 = t1;
             }
         }
@@ -159,10 +159,11 @@ public class GraphVizUtils {
             // CREATE NODES OF LIST
             Object t1 = null;
             Object t2 = iter.next();
+
             while (iter.hasNext()) {
                 t1 = iter.next();
-                gv.addln(t2.toString() + " -> " + t1.toString() + ";");
-                gv.addln(t1.toString() + " -> " + t2.toString() + ";");
+                gv.addln(t2.toString() + " -> " + t1.toString() + "[label=\"next\"];");
+                gv.addln(t1.toString() + " -> " + t2.toString() + "[label=\"prev\"];");
                 t2 = t1;
             }
         }
