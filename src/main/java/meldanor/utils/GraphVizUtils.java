@@ -250,6 +250,120 @@ public class GraphVizUtils {
     }
 
     // *******************************
+    // ********* ARRAY LIST **********
+    // *******************************
+
+    /**
+     * Create a graph of a array list. The output format depends on the target
+     * file is "out.png"<br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
+     * 
+     * @param list
+     *            The iterable list
+     */
+    public static void visualizeArrayList(Iterable<?> list) {
+        visualizeArrayList(list, new File("target/out.png"), Format.PNG, Direction.TOP_BOTTOM);
+    }
+
+    /**
+     * Create a graph of a array list. The output format depends on the
+     * parameter.<br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
+     * 
+     * @param list
+     *            The iterable list
+     * @param targetName
+     *            The name of the file as relative path. If the ending differs
+     *            from the ending of the formatType, the targetName will be
+     *            renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     */
+    public static void visualizeArrayList(Iterable<?> list, String targetName, Format formatType) {
+        // RENAME FILE IF ENDING DIFFER FROM TYPE ENDING
+        if (!targetName.endsWith(formatType.getType()))
+            targetName = targetName.concat(".").concat(formatType.getType());
+
+        // CREATE GRAPH
+        visualizeArrayList(list, new File(targetName), formatType, Direction.TOP_BOTTOM);
+    }
+
+    /**
+     * Create a graph of a array list. The output format depends on the
+     * parameter.
+     * 
+     * @param list
+     *            The iterable list
+     * @param targetName
+     *            The name of the file as relative path. If the ending differs
+     *            from the ending of the formatType, the targetName will be
+     *            renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     * @param dir
+     *            The direction of the graph. See {@link Direction}
+     */
+    public static void visualizeArrayList(Iterable<?> list, String targetName, Format formatType, Direction dir) {
+        // RENAME FILE IF ENDING DIFFER FROM TYPE ENDING
+        if (!targetName.endsWith(formatType.getType()))
+            targetName = targetName.concat(".").concat(formatType.getType());
+
+        // CREATE GRAPH
+        visualizeArrayList(list, new File(targetName), formatType, dir);
+    }
+
+    /**
+     * Create a graph of a array list. The output format depends on the
+     * parameter.<br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
+     * 
+     * @param list
+     *            The iterable list
+     * @param target
+     *            The outputFile. If the ending differs from the ending of the
+     *            formatType, the targetName will be renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     */
+    public static void visualizeArrayList(Iterable<?> list, File target, Format formatType) {
+        visualizeArrayList(list, target, formatType, Direction.TOP_BOTTOM);
+    }
+
+    /**
+     * Create a graph of a array list. The output format depends on the
+     * parameter.
+     * 
+     * @param list
+     *            The iterable list
+     * @param target
+     *            The outputFile. If the ending differs from the ending of the
+     *            formatType, the targetName will be renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     * @param dir
+     *            The direction of the graph. See {@link Direction}
+     */
+    public static void visualizeArrayList(Iterable<?> list, File target, Format formatType, Direction dir) {
+        GraphViz gv = startGraph(dir);
+
+        gv.addln("node [shape=record];");
+        StringBuilder sBuilder = new StringBuilder(512);
+        sBuilder.append("struct1 [label=\"");
+
+        Iterator<?> iter = list.iterator();
+
+        while (iter.hasNext()) {
+            sBuilder.append(iter.next());
+            if (iter.hasNext())
+                sBuilder.append('|');
+        }
+        sBuilder.append("\"];");
+        gv.addln(sBuilder.toString());
+
+        finishGraph(target, formatType, gv);
+    }
+
+    // *******************************
     // ***** COMMON HELPER FUNCS *****
     // *******************************
 
