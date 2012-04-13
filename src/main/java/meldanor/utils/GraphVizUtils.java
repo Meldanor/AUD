@@ -69,9 +69,7 @@ public class GraphVizUtils {
      *            The output file format. See {@link Format}
      */
     public static void visualizeSingleLinkedList(Iterable<?> list, File target, Format formatType) {
-        // CREATE GRAPH AND HEAD
-        GraphViz gv = new GraphViz();
-        gv.addln(gv.start_graph());
+        GraphViz gv = startGraph();
 
         Iterator<?> iter = list.iterator();
         // LIST IS NOT EMPTY
@@ -87,15 +85,7 @@ public class GraphVizUtils {
             }
         }
 
-        // FINISH GRAPH
-        gv.addln(gv.end_graph());
-
-        // RENAME FILE IF ENDING DIFFER FROM TYPE ENDING
-        if (!target.getName().endsWith(formatType.getType()))
-            target = new File(target.getName().concat(".").concat(formatType.getType()));
-
-        // WRITE FILE
-        gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), formatType.getType()), target);
+        finishGraph(target, formatType, gv);
     }
 
     // *******************************
@@ -148,9 +138,7 @@ public class GraphVizUtils {
      *            The output file format. See {@link Format}
      */
     public static void visualizeDoubleLinkedList(Iterable<?> list, File target, Format formatType) {
-        // CREATE GRAPH AND HEAD
-        GraphViz gv = new GraphViz();
-        gv.addln(gv.start_graph());
+        GraphViz gv = startGraph();
 
         Iterator<?> iter = list.iterator();
         // LIST IS NOT EMPTY
@@ -168,6 +156,14 @@ public class GraphVizUtils {
             }
         }
 
+        finishGraph(target, formatType, gv);
+    }
+
+    // *******************************
+    // ***** COMMON HELPER FUNCS *****
+    // *******************************
+
+    private static void finishGraph(File target, Format formatType, GraphViz gv) {
         // FINISH GRAPH
         gv.addln(gv.end_graph());
 
@@ -177,5 +173,12 @@ public class GraphVizUtils {
 
         // WRITE FILE
         gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), formatType.getType()), target);
+    }
+
+    private static GraphViz startGraph() {
+        // CREATE GRAPH AND HEAD
+        GraphViz gv = new GraphViz();
+        gv.addln(gv.start_graph());
+        return gv;
     }
 }
