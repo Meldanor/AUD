@@ -25,18 +25,20 @@ public class GraphVizUtils {
 
     /**
      * Create a graph of a single linked list. The output format is PNG and the
-     * target file is "out.png"
+     * target file is "out.png". <br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
      * 
      * @param list
      *            The iterable list
      */
     public static void visualizeSingleLinkedList(Iterable<?> list) {
-        visualizeSingleLinkedList(list, new File("target/out.png"), Format.PNG);
+        visualizeSingleLinkedList(list, new File("target/out.png"), Format.PNG, Direction.TOP_BOTTOM);
     }
 
     /**
      * Create a graph of a single linked list. The output format depends on the
-     * parameter.
+     * parameter. <br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
      * 
      * @param list
      *            The iterable list
@@ -53,7 +55,48 @@ public class GraphVizUtils {
             targetName = targetName.concat(".").concat(formatType.getType());
 
         // CREATE GRAPH
-        visualizeSingleLinkedList(list, new File(targetName), formatType);
+        visualizeSingleLinkedList(list, new File(targetName), formatType, Direction.TOP_BOTTOM);
+    }
+
+    /**
+     * Create a graph of a single linked list. The output format depends on the
+     * parameter.
+     * 
+     * @param list
+     *            The iterable list
+     * @param targetName
+     *            The name of the file as relative path. If the ending differs
+     *            from the ending of the formatType, the targetName will be
+     *            renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     * @param dir
+     *            The direction of the graph. See {@link Direction}
+     */
+    public static void visualizeSingleLinkedList(Iterable<?> list, String targetName, Format formatType, Direction dir) {
+        // RENAME FILE IF ENDING DIFFER FROM TYPE ENDING
+        if (!targetName.endsWith(formatType.getType()))
+            targetName = targetName.concat(".").concat(formatType.getType());
+
+        // CREATE GRAPH
+        visualizeSingleLinkedList(list, new File(targetName), formatType, dir);
+    }
+
+    /**
+     * Create a graph of a single linked list. The output format depends on the
+     * parameter. <br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
+     * 
+     * @param list
+     *            The iterable list
+     * @param target
+     *            The outputFile. If the ending differs from the ending of the
+     *            formatType, the targetName will be renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     */
+    public static void visualizeSingleLinkedList(Iterable<?> list, File target, Format formatType) {
+        visualizeSingleLinkedList(list, target, formatType, Direction.TOP_BOTTOM);
     }
 
     /**
@@ -67,9 +110,11 @@ public class GraphVizUtils {
      *            formatType, the targetName will be renamed
      * @param formatType
      *            The output file format. See {@link Format}
+     * @param dir
+     *            The direction of the graph. See {@link Direction}
      */
-    public static void visualizeSingleLinkedList(Iterable<?> list, File target, Format formatType) {
-        GraphViz gv = startGraph();
+    public static void visualizeSingleLinkedList(Iterable<?> list, File target, Format formatType, Direction dir) {
+        GraphViz gv = startGraph(dir);
 
         Iterator<?> iter = list.iterator();
         // LIST IS NOT EMPTY
@@ -94,18 +139,20 @@ public class GraphVizUtils {
 
     /**
      * Create a graph of a double linked list. The output format is PNG and the
-     * target file is "out.png"
+     * target file is "out.png"<br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
      * 
      * @param list
      *            The iterable list
      */
     public static void visualizeDoubleLinkedList(Iterable<?> list) {
-        visualizeDoubleLinkedList(list, new File("target/out.png"), Format.PNG);
+        visualizeDoubleLinkedList(list, new File("target/out.png"), Format.PNG, Direction.TOP_BOTTOM);
     }
 
     /**
      * Create a graph of a double linked list. The output format depends on the
-     * parameter.
+     * parameter.<br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
      * 
      * @param list
      *            The iterable list
@@ -122,7 +169,48 @@ public class GraphVizUtils {
             targetName = targetName.concat(".").concat(formatType.getType());
 
         // CREATE GRAPH
-        visualizeDoubleLinkedList(list, new File(targetName), formatType);
+        visualizeDoubleLinkedList(list, new File(targetName), formatType, Direction.TOP_BOTTOM);
+    }
+
+    /**
+     * Create a graph of a double linked list. The output format depends on the
+     * parameter.
+     * 
+     * @param list
+     *            The iterable list
+     * @param targetName
+     *            The name of the file as relative path. If the ending differs
+     *            from the ending of the formatType, the targetName will be
+     *            renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     * @param dir
+     *            The direction of the graph. See {@link Direction}
+     */
+    public static void visualizeDoubleLinkedList(Iterable<?> list, String targetName, Format formatType, Direction dir) {
+        // RENAME FILE IF ENDING DIFFER FROM TYPE ENDING
+        if (!targetName.endsWith(formatType.getType()))
+            targetName = targetName.concat(".").concat(formatType.getType());
+
+        // CREATE GRAPH
+        visualizeDoubleLinkedList(list, new File(targetName), formatType, dir);
+    }
+
+    /**
+     * Create a graph of a double linked list. The output format depends on the
+     * parameter.<br>
+     * The default direction of the graph is TOP_BOTTOM {@link Direction}
+     * 
+     * @param list
+     *            The iterable list
+     * @param target
+     *            The outputFile. If the ending differs from the ending of the
+     *            formatType, the targetName will be renamed
+     * @param formatType
+     *            The output file format. See {@link Format}
+     */
+    public static void visualizeDoubleLinkedList(Iterable<?> list, File target, Format formatType) {
+        visualizeDoubleLinkedList(list, target, formatType, Direction.TOP_BOTTOM);
     }
 
     /**
@@ -136,9 +224,11 @@ public class GraphVizUtils {
      *            formatType, the targetName will be renamed
      * @param formatType
      *            The output file format. See {@link Format}
+     * @param dir
+     *            The direction of the graph. See {@link Direction}
      */
-    public static void visualizeDoubleLinkedList(Iterable<?> list, File target, Format formatType) {
-        GraphViz gv = startGraph();
+    public static void visualizeDoubleLinkedList(Iterable<?> list, File target, Format formatType, Direction dir) {
+        GraphViz gv = startGraph(dir);
 
         Iterator<?> iter = list.iterator();
         // LIST IS NOT EMPTY
@@ -175,10 +265,11 @@ public class GraphVizUtils {
         gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), formatType.getType()), target);
     }
 
-    private static GraphViz startGraph() {
+    private static GraphViz startGraph(Direction dir) {
         // CREATE GRAPH AND HEAD
         GraphViz gv = new GraphViz();
         gv.addln(gv.start_graph());
+        gv.addln("rankdir=" + dir.getDirTag());
         return gv;
     }
 }
