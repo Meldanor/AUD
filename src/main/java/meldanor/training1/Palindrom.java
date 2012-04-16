@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  */
 public class Palindrom {
 
-    private static final Pattern p = Pattern.compile("[^a-zA-Z0-9]");
+    private static final Pattern p = Pattern.compile("[^a-zA-Z]");
 
     public static boolean isPalindrome(String str) {
         // ELIMINATE ALL SPECIAL CHARACTER AND CAST TO LOWER CASE
@@ -75,6 +75,7 @@ public class Palindrom {
         // IS PALINDROME
         return true;
     }
+
     public static void test() {
 
         String[] tests = {"Reliefpfeiler", "lol", "oman", "Meine Haare lichten sich", "Lagerregal", "Ein Esel lese nie.", "Na, Fakir, Paprika-Fan?", "Madam", "Marktkram", "Gurken hol ohne Krug!", "O, Streit irritiert so!"};
