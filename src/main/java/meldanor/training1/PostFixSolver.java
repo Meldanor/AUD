@@ -19,6 +19,8 @@ import java.util.regex.Pattern;
  */
 public class PostFixSolver {
 
+    // Einfach mal falsch geloest
+
     private static final Pattern S = Pattern.compile("\\s");
     private static final Pattern NUMBER = Pattern.compile("\\d");
 
