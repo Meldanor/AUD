@@ -23,24 +23,28 @@ public class TailRecursion {
      */
 
     public static int pot2TailRec(int n) {
-        if (n == 0)
-            return 1;
+        return pot2TailRec(1, n);
+    }
+
+    private static int pot2TailRec(int m, int i) {
+        if (i == 0)
+            return m;
         else
-            return 2 * (pot2TailRec(--n));
+            return pot2TailRec(m * 2, --i);
     }
 
     public static int sumFacTailRec(int n) {
-        return sumFacTailRec(n, n / 2);
+        return sumFacTailRec(n, 1, n / 2);
     }
 
-    private static int sumFacTailRec(int n, int count) {
+    private static int sumFacTailRec(int n, int sum, int count) {
         if (count == 1)
-            return 1;
+            return sum;
         else {
             if (n % count == 0)
-                return count + sumFacTailRec(n, --count);
+                return sumFacTailRec(n, sum + count, --count);
             else
-                return sumFacTailRec(n, --count);
+                return sumFacTailRec(n, sum, --count);
         }
     }
 
