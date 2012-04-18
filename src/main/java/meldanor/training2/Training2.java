@@ -17,7 +17,9 @@ package meldanor.training2;
 public class Training2 {
 
     public static void test() {
-        MyDList.test();
+//        MyDList.test();
+//        JosephusProblem.test();
+        MyCircle.test();
     }
 
 }

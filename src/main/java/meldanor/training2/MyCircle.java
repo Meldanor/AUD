@@ -36,7 +36,10 @@ public class MyCircle<T> {
     }
 
     public T front() {
-        return head_.data_;
+        if (head_ == null)
+            return null;
+        else
+            return head_.data_;
     }
 
     public String toString() {
@@ -58,37 +61,76 @@ public class MyCircle<T> {
     }
 
     public int size() {
-        int count = 0;
+        if (empty())
+            return 0;
+        int count = 1;
         Node start = head_;
-        while (start.next_ != head_)
+        while (start.next_ != head_) {
+            start = start.next_;
             ++count;
+        }
         return count;
     }
 
     public boolean empty() {
-        return head_.next_ == head_;
+
+        return head_ == null;
     }
 
     public void push_back(T obj) {
-        Node temp = head_.prev_;
-        Node insert = new Node(obj, temp, head_);
-        temp.next_ = insert;
-        head_.prev_ = insert;
+        // When list is empty
+        if (head_ == null) {
+            head_ = new Node(obj, null, null);
+            head_.next_ = head_;
+            head_.prev_ = head_;
+        } else {
+            Node temp = head_.prev_;
+            Node insert = new Node(obj, temp, head_);
+            temp.next_ = insert;
+            head_.prev_ = insert;
+        }
     }
-
     public void pop_front() {
         // DO NOTHNG IN AN EMPTY RING
         if (empty())
             return;
-        Node temp = head_;
-        Node temp2 = head_.next_;
-        head_ = temp2;
-        temp2.prev_ = temp.prev_;
-        temp.prev_.next_ = temp2;
-
+        if (size() == 1) {
+            head_ = null;
+        } else {
+            Node temp = head_;
+            Node temp2 = head_.next_;
+            head_ = temp2;
+            temp2.prev_ = temp.prev_;
+            temp.prev_.next_ = temp2;
+        }
     }
 
     public static void test() {
-        // TODO: test
+        MyCircle<String> circle = new MyCircle<String>();
+        // 0
+        System.out.println(circle.size());
+        // TRUE
+        System.out.println(circle.empty());
+
+        String quote = "Bond James Bond";
+        String[] split = quote.split(" ");
+        for (String s : split)
+            circle.push_back(s);
+
+        // [Bond,James,Bond]
+        System.out.println(circle.toString());
+        // 3
+        System.out.println(circle.size());
+        // FALSE
+        System.out.println(circle.empty());
+
+        circle.pop_front();
+        // [James,Bond]
+        System.out.println(circle.toString());
+        // 2
+        System.out.println(circle.size());
+        // FALSE
+        System.out.println(circle.empty());
+
     }
 }
