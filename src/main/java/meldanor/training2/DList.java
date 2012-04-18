@@ -356,7 +356,7 @@ public class DList<T> implements Iterable<T>, Graphvizable {
     public String toDot() {
         String rv = "digraph DList {\n\t\n\tnode [shape=box];\n\t";
         Node node = head_;
-        int i = 0;
+//        int i = 0;
         while (node != null) {
             String prv = node.prev_ != null ? node.prev_.data_.toString() : "null";
             String nxt = node.next_ != null ? node.next_.data_.toString() : "null";
@@ -364,7 +364,7 @@ public class DList<T> implements Iterable<T>, Graphvizable {
             rv += "\"" + node.data_.toString() + "\" -> \"" + prv + "\" [color=blue,label=prev];\n\t" + "\"" + node.data_.toString() + "\" -> \"" + nxt + "\" [color=blue,label=next];\n\t";
 
             node = node.next_;
-            ++i;
+//            ++i;
         }
         rv += "\n}\n";
         return rv;
