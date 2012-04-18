@@ -40,25 +40,20 @@ public class MyDList<T> extends DList<T> {
 
     public void insert(int n, MyDList<T> list) {
         // WHEN THIS IS EMPTY OR N NOT IN THE LIST SIZE DO A APPEND
-        if (n < 0 || n >= this.size())
+        if (n < 0 || n >= this.size() - 1)
             append(list);
         else {
             // CREATE A COPY
-            list = copy(list);
-            // TEMPONARY NODE TO INDICATE WHERE THE INSERTION STARTs
-            Node insert_start = this.head_;
-            // ITERATE UNTIL INSERTION POINT HAS REACHED
-            for (int i = 0; i < n; ++i)
-                insert_start = insert_start.next_;
-            // TEMPONARY NODE TO INDICATE WHERE THE INSERTION ENDS
-            Node insert_end = insert_start.next_;
+            if (this == list)
+                list = copy(list);
+            ForwardIterator iter = this.iterator();
+            for (int i = 0; i <= n; ++i)
+                iter.next();
 
-            // INSERT THE LIST
-            insert_start.next_ = list.head_;
-            list.head_.prev_ = insert_start;
-
-            insert_end.prev_ = list.tail_;
-            list.tail_.next_ = insert_end;
+            while (!list.empty()) {
+                this.insert_before(iter, list.front());
+                list.pop_front();
+            }
         }
     }
 
@@ -77,15 +72,13 @@ public class MyDList<T> extends DList<T> {
     public static void test() {
         // 0 - 9
         MyDList<Integer> list1 = new MyDList<Integer>();
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < 10; ++i)
             list1.push_back(i);
-        }
 
         // 10 - 19
         MyDList<Integer> list2 = new MyDList<Integer>();
-        for (int i = 10; i < 20; ++i) {
+        for (int i = 10; i < 20; ++i)
             list2.push_back(i);
-        }
 
         list1.append(list2);
 
@@ -110,7 +103,10 @@ public class MyDList<T> extends DList<T> {
         list2.push_back(7);
         // LIST 2 = 4;5;6;7
 
-        list1.insert(-1, list2);
+        System.out.println(list1.size());
+        System.out.println(list2.size());
+
+        list1.insert(3, list2);
 
         for (Integer i : list1)
             System.out.print(i + ";");
