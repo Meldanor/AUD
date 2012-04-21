@@ -18,8 +18,8 @@ public class Training2 {
 
     public static void test() {
 //        MyDList.test();
-//        JosephusProblem.test();
-        MyCircle.test();
+        JosephusProblem.test();
+//        MyCircle.test();
     }
 
 }
