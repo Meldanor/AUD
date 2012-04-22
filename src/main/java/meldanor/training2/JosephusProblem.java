@@ -111,7 +111,6 @@ public class JosephusProblem {
         // Array to queue
         for (int i = 0; i < children.length; ++i) {
             reihe.enqueue(children[i]);
-            System.out.println("reihe ist " + reihe);
         }
 
         while (!reihe.is_empty()) {
