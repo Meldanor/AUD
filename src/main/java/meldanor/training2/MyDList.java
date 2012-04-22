@@ -112,4 +112,37 @@ public class MyDList<T> extends DList<T> {
             System.out.print(i + ";");
         // 0;1;2;3;4;5;6;7;8;
     }
+
+    // BETTER ALGORITHMS
+//    public void append(MyDList<T> that) {
+//
+//        int size = that.size();
+//        int i = 0;
+//        Iterator<T> iter = that.iterator();
+//        while (i < size) {
+//            this.push_back(iter.next());
+//            ++i;
+//        }
+//
+//    }
+//
+//    public void insert(int n, MyDList<T> that) {
+//
+//        if (n > this.size() || n < 0)
+//            append(that);
+//
+//        ForwardIterator thisIter = this.iterator();
+//        for (int i = 0; i < n; i++) {
+//            thisIter.next();
+//        }
+//
+//        int i = 0;
+//        int size = that.size();
+//        Iterator<T> thatIter = that.iterator();
+//        while (i++ < size) {
+//            this.insert_after(thisIter, thatIter.next());
+//            thisIter.next();
+//        }
+//
+//    }
 }
