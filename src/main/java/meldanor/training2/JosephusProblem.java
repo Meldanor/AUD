@@ -24,17 +24,14 @@ import java.util.Set;
 public class JosephusProblem {
 
     /*
-     * a)
-     * Zufaellig die Leute aufstellen und auszaehlen lassen. Danach pruefen, ob
-     * in den ersten 7 Ausgezaehlten sich ein Freund von Josephus oder er selbst
-     * befindet. Ist dies nicht der Fall, so ist dies eine gueltige Aufstellung.
-     * Befindet sich einer, die Leute zufaellig neu aufstellen lassen und wieder
-     * pruefen.
-     * Solange dies durchfuehren, bis eine gueltige Aufstellung gefunden wurde. 
+     * a) Zufaellig die Leute aufstellen und auszaehlen lassen. Danach pruefen,
+     * ob in den ersten 7 Ausgezaehlten sich ein Freund von Josephus oder er
+     * selbst befindet. Ist dies nicht der Fall, so ist dies eine gueltige
+     * Aufstellung. Befindet sich einer, die Leute zufaellig neu aufstellen
+     * lassen und wieder pruefen. Solange dies durchfuehren, bis eine gueltige
+     * Aufstellung gefunden wurde.
      * 
-     * c)
-     * An den Position (von 1 beginnend zu zaehlend):
-     * 2,3,5,6,8,12
+     * c) An den Position (von 1 beginnend zu zaehlend): 2,3,5,6,8,12
      */
 
     public static <T> Queue<T> josephus(T[] children, int numbSyl) {
@@ -103,6 +100,30 @@ public class JosephusProblem {
 
         for (String person : list)
             System.out.print(person + " , ");
+    }
+
+    // © Tabea
+    public static <T> Queue<T> josephus2(T[] children, int numbSyl) {
+
+        Queue<T> reihe = new Queue<T>();
+        Queue<T> raus = new Queue<T>();
+
+        // Array to queue
+        for (int i = 0; i < children.length; ++i) {
+            reihe.enqueue(children[i]);
+            System.out.println("reihe ist " + reihe);
+        }
+
+        while (!reihe.is_empty()) {
+            // erstes element an letzte stelle setzen
+            for (int i = 0; i < numbSyl - 1; ++i)
+                reihe.enqueue(reihe.dequeue());
+            // typen kicken
+            raus.enqueue(reihe.dequeue());
+        }
+
+        return raus;
+
     }
 
     private static boolean check(LinkedList<String> person) {
