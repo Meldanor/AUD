@@ -19,7 +19,8 @@ public class Training3 {
     public static void test() {
 //        LinkedNode.test();
 //        SortList.test();
-        IntSList.test();
+//        IntSList.test();
+        MySList.test();
     }
 
 }
