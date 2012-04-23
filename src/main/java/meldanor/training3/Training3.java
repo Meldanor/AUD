@@ -17,7 +17,8 @@ package meldanor.training3;
 public class Training3 {
 
     public static void test() {
-        LinkedNode.test();
+//        LinkedNode.test();
+        SortList.test();
     }
 
 }
