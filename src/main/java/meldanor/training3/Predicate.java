@@ -14,12 +14,6 @@ package meldanor.training3;
  * @author Meldanor
  * 
  */
-public class Training3 {
-
-    public static void test() {
-//        LinkedNode.test();
-//        SortList.test();
-        IntSList.test();
-    }
-
+public interface Predicate {
+    public boolean test(int el);
 }
