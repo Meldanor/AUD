@@ -8,17 +8,16 @@
  * begegnen.
  */
 
-package meldanor;
-
-import meldanor.training3.Training3;
+package meldanor.training3;
 
 /**
  * @author Meldanor
  * 
  */
-public class Main {
+public class Training3 {
 
-    public static void main(String[] args) {
-        Training3.test();
+    public static void test() {
+        LinkedNode.test();
     }
+
 }
