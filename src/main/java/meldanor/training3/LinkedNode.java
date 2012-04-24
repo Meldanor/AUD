@@ -10,9 +10,6 @@
 
 package meldanor.training3;
 
-import java.util.Iterator;
-
-import meldanor.utils.GraphViz;
 
 /**
  * @author Meldanor
