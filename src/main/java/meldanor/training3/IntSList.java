@@ -26,7 +26,7 @@ public class IntSList {
         }
     };
 
-    private SList<Integer> list;
+    private final SList<Integer> list;
 
     public IntSList() {
         list = new SList<Integer>();
