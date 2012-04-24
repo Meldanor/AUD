@@ -105,7 +105,7 @@ public class MySList implements Iterable<Integer> {
         }
 
         private boolean isOdd(Node node) {
-            return node.getData() % 2 == 1;
+            return Math.abs(node.getData() % 2) == 1;
         }
 
         @Override
