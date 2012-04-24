@@ -86,11 +86,6 @@ public class MySList implements Iterable<Integer> {
             return cur != null;
         }
 
-        /*
-         * (non-Javadoc)
-         * 
-         * @see java.util.Iterator#next()
-         */
         @Override
         public Integer next() {
             int data = cur.getData();
