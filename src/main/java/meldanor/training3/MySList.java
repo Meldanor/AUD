@@ -10,9 +10,8 @@
 
 package meldanor.training3;
 
-import java.util.NoSuchElementException;
-
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @author Meldanor
@@ -61,6 +60,10 @@ public class MySList implements Iterable<Integer> {
 
     }
 
+    public void clear() {
+        head = null;
+    }
+
     @Override
     public Iterator<Integer> iterator() {
         return new Iterator<Integer>();
@@ -68,32 +71,51 @@ public class MySList implements Iterable<Integer> {
 
     private class Iterator<Int> implements java.util.Iterator<Integer> {
 
-        private Node cur = head;
+        private Node cur;
 
+        public Iterator() {
+            this.cur = head;
+            // HEAD IS EVEN
+            if (!isOdd(cur)) {
+                // SET HEAD
+                cur = getOddNode(cur);
+            }
+        }
         @Override
         public boolean hasNext() {
             return cur != null;
         }
 
+        /*
+         * (non-Javadoc)
+         * 
+         * @see java.util.Iterator#next()
+         */
         @Override
         public Integer next() {
-            if (cur == null)
-                throw new NoSuchElementException();
+            int data = cur.getData();
+            cur = getOddNode(cur);
+            return data;
+        }
 
-            while (hasNext()) {
-                Integer data = cur.getData();
-                cur = cur.getNext();
-                // is odd
-                if (data % 2 == 1)
-                    return data;
+        private Node getOddNode(Node start) {
+
+            Node oddNode = start;
+            while ((oddNode = oddNode.getNext()) != null) {
+                if (isOdd(oddNode))
+                    return oddNode;
             }
-            // Node can't save 'null' value so this is unique
-            return null;
+            return oddNode;
+
+        }
+
+        private boolean isOdd(Node node) {
+            return node.getData() % 2 == 1;
         }
 
         @Override
         public void remove() {
-            throw new NotImplementedException();
+            throw new UnsupportedOperationException();
         }
 
     }
@@ -108,10 +130,34 @@ public class MySList implements Iterable<Integer> {
         test.push_back(74);
         test.push_back(42);
         test.push_back(3);
-        test.push_back(2);
+        test.push_back(4);
+        test.push_back(4);
 
+        // 85 93 81 3
         for (Integer i : test)
-            System.out.println(i);
+            System.out.print(i + ",");
+
+        test.clear();
+
+        // RANDOM ARRAY
+        Random rand = new Random();
+        int tests = 32;
+        int[] array = new int[tests];
+
+        for (int i = 0; i < tests; ++i)
+            array[i] = rand.nextInt(tests * 31);
+
+        Arrays.sort(array);
+
+        for (int i = 0; i < tests; ++i)
+            test.push_back(array[i]);
+
+        System.out.println(Arrays.toString(array));
+        System.out.print('[');
+        for (Integer i : test)
+            System.out.print(i + ", ");
+        System.out.print(']');
+
     }
 
 }
