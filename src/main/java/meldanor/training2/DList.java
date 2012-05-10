@@ -289,6 +289,7 @@ public class DList<T> implements Iterable<T>, Graphvizable {
         public void remove() {
             throw new UnsupportedOperationException();
         }
+        @SuppressWarnings("unchecked")
         @Override
         public boolean equals(Object other) {
             return node_ == ((ForwardIterator) other).node_;

@@ -295,6 +295,7 @@ public class SList<T> implements Iterable<T>, Graphvizable {
             throw new UnsupportedOperationException();
         }
         // @>slist:iterator:remove
+        @SuppressWarnings("rawtypes")
         @Override
         public boolean equals(Object other) {
             return node_ == ((Iterator) other).node_;
@@ -337,13 +338,13 @@ public class SList<T> implements Iterable<T>, Graphvizable {
     public String toDot() {
         String rv = "digraph SList {\n\t\n\tnode [shape=box];\n\t";
         Node node = head_;
-        int i = 0;
+//        int i = 0;
         while (node != null) {
             String nxt = node.next_ != null ? node.next_.data_.toString() : "null";
             rv += "\"" + node.data_.toString() + "\"";
             rv += " -> \"" + nxt + "\" [color=blue,label=next];\n\t";
             node = node.next_;
-            ++i;
+//            ++i;
         }
         rv += "\n}\n";
         return rv;
