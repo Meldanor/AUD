@@ -18,7 +18,8 @@ public class Training4 {
 
     public static void test() {
 //        ForwardList.test();
-        RecursionToStack.test();
+//        RecursionToStack.test();
+        BuildBinTree.test();
     }
 
 }

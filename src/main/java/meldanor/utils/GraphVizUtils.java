@@ -363,6 +363,11 @@ public class GraphVizUtils {
         finishGraph(target, formatType, gv);
     }
 
+    public static void visualize(String dotString, File target, Format formatType, Direction dir) {
+        GraphViz gv = new GraphViz();
+        gv.writeGraphToFile(gv.getGraph(dotString, formatType.getType()), target);
+    }
+
     // *******************************
     // ***** COMMON HELPER FUNCS *****
     // *******************************
