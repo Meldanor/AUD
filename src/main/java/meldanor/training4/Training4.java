@@ -17,7 +17,8 @@ package meldanor.training4;
 public class Training4 {
 
     public static void test() {
-        ForwardList.test();
+//        ForwardList.test();
+        RecursionToStack.test();
     }
 
 }
