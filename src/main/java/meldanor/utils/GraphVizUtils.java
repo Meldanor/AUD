@@ -340,11 +340,11 @@ public class GraphVizUtils {
      *            formatType, the targetName will be renamed
      * @param formatType
      *            The output file format. See {@link Format}
-     * @param dir
+     * @param direction
      *            The direction of the graph. See {@link Direction}
      */
-    public static void visualizeArrayList(Iterable<?> list, File target, Format formatType, Direction dir) {
-        GraphViz gv = startGraph(dir);
+    public static void visualizeArrayList(Iterable<?> list, File target, Format formatType, Direction direction) {
+        GraphViz gv = startGraph(direction);
 
         gv.addln("node [shape=record];");
         StringBuilder sBuilder = new StringBuilder(512);
@@ -363,7 +363,11 @@ public class GraphVizUtils {
         finishGraph(target, formatType, gv);
     }
 
-    public static void visualize(String dotString, File target, Format formatType, Direction dir) {
+    public static void visualize(String dotString, String fileName, Format formatType, Direction direction) {
+        visualize(dotString, new File(fileName), formatType, direction);
+    }
+
+    public static void visualize(String dotString, File target, Format formatType, Direction direction) {
         GraphViz gv = new GraphViz();
         gv.writeGraphToFile(gv.getGraph(dotString, formatType.getType()), target);
     }

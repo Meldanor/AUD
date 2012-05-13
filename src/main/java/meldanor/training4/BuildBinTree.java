@@ -10,8 +10,6 @@
 
 package meldanor.training4;
 
-import java.io.File;
-
 import meldanor.utils.Direction;
 import meldanor.utils.Format;
 import meldanor.utils.GraphVizUtils;
@@ -47,22 +45,21 @@ public class BuildBinTree {
         for (BinaryTree<Integer> i : minusEight.preorder())
             System.out.print(i.getData() + ",");
         System.out.println();
-        
+
         System.out.print("InOrder:\t");
         for (BinaryTree<Integer> i : minusEight.inorder())
             System.out.print(i.getData() + ",");
         System.out.println();
-        
+
         System.out.print("PostOrder:\t");
         for (BinaryTree<Integer> i : minusEight.postorder())
             System.out.print(i.getData() + ",");
         System.out.println();
-        
+
         System.out.print("LevelOrder:\t");
         for (BinaryTree<Integer> i : minusEight.levelorder())
             System.out.print(i.getData() + ",");
 
-//        GraphVizUtils.visualize(minusEight.toDot(), new File("baum.png"), Format.PNG, Direction.BOTTOM_TOP);
+        GraphVizUtils.visualize(minusEight.toDot(), "buildBinTree.png", Format.PNG, Direction.BOTTOM_TOP);
     }
-
 }
