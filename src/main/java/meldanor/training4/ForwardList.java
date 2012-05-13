@@ -28,7 +28,6 @@ public class ForwardList<T> implements Iterable<T> {
             this.data = data;
         }
 
-        @SuppressWarnings("unused")
         public Node(T data, Node next) {
             this(data);
             this.next = next;
@@ -62,17 +61,32 @@ public class ForwardList<T> implements Iterable<T> {
     }
 
     public void add(T e) {
+        push_back(e);
+    }
+
+    public void addFirst(T e) {
         push_front(e);
+    }
+
+    public void addLast(T e) {
+        push_back(e);
     }
 
     public void push_front(T e) {
         if (isEmpty())
             head = new Node(e);
         else {
+            head = new Node(e, head);
+        }
+    }
+
+    public void push_back(T e) {
+        if (isEmpty())
+            head = new Node(e);
+        else {
             Node cur = head;
             while (cur.hasNext())
                 cur = cur.getNext();
-
             cur.setNext(new Node(e));
         }
     }
@@ -80,7 +94,10 @@ public class ForwardList<T> implements Iterable<T> {
     /* RECURSIVE BACK TRAVERSE */
 
     public void backTraverse() {
-        backTraverse(head);
+        if (isEmpty())
+            System.out.println("List is empty!");
+        else
+            backTraverse(head);
     }
 
     private void backTraverse(Node node) {
@@ -98,6 +115,9 @@ public class ForwardList<T> implements Iterable<T> {
         private Stack<T> stack = new Stack<T>();
 
         public BackIterator() {
+            if (isEmpty())
+                return;
+            
             Node cur = head;
             while (cur.hasNext()) {
                 stack.push(cur.getData());
