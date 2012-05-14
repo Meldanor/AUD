@@ -101,11 +101,10 @@ public class ForwardList<T> implements Iterable<T> {
     }
 
     private void backTraverse(Node node) {
-        if (node.hasNext()) {
+        if (node.hasNext())
             backTraverse(node.getNext());
-            System.out.println(node.getData().toString());
-        } else
-            System.out.println(node.getData().toString());
+
+        System.out.println(node.getData().toString());
     }
 
     /* /RECURSIVE BACK TRAVERSE */
@@ -117,7 +116,7 @@ public class ForwardList<T> implements Iterable<T> {
         public BackIterator() {
             if (isEmpty())
                 return;
-            
+
             Node cur = head;
             while (cur.hasNext()) {
                 stack.push(cur.getData());
