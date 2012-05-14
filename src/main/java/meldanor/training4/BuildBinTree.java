@@ -10,10 +10,8 @@
 
 package meldanor.training4;
 
-import meldanor.utils.Direction;
-import meldanor.utils.Format;
-import meldanor.utils.GraphVizUtils;
-
+import aud.BinaryTree;
+import aud.util.DotViewer;
 /**
  * @author Meldanor
  * 
@@ -60,6 +58,7 @@ public class BuildBinTree {
         for (BinaryTree<Integer> i : minusEight.levelorder())
             System.out.print(i.getData() + ",");
 
-        GraphVizUtils.visualize(minusEight.toDot(), "buildBinTree.png", Format.PNG, Direction.BOTTOM_TOP);
+//        GraphVizUtils.visualize(minusEight.toDot(), "buildBinTree.png", Format.PNG, Direction.BOTTOM_TOP);
+        DotViewer.displayWindow(minusEight.toDot(), "Tree");
     }
 }

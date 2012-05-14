@@ -12,6 +12,8 @@ package meldanor.training4;
 
 import java.util.Random;
 
+import aud.Stack;
+
 /**
  * @author Meldanor
  * 
