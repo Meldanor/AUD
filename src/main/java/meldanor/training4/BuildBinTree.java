@@ -18,7 +18,7 @@ import aud.util.DotViewer;
  */
 public class BuildBinTree {
 
-    public static void test() {
+    public static void main(String[] args) {
 
         BinaryTree<Integer> minusEight = new BinaryTree<Integer>(-8);
 

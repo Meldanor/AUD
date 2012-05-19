@@ -146,7 +146,7 @@ public class ForwardList<T> implements Iterable<T> {
         return new BackIterator<T>();
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         ForwardList<Integer> list = new ForwardList<Integer>();
         for (int i = 1; i <= 5; ++i)
             list.add(i);

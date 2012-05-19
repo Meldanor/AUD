@@ -56,7 +56,7 @@ public class IntSList {
         return result;
     }
 
-    public static void test() {
+    public static void main(String[] args) {
 
         IntSList test = new IntSList();
         test.push_back(85);

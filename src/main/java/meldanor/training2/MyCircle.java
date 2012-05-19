@@ -105,7 +105,7 @@ public class MyCircle<T> {
         }
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         MyCircle<String> circle = new MyCircle<String>();
         // 0
         System.out.println(circle.size());

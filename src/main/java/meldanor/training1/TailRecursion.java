@@ -48,7 +48,7 @@ public class TailRecursion {
         }
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         // 1024
         System.out.println("2^10 = " + pot2TailRec(10));
         // 2147483647

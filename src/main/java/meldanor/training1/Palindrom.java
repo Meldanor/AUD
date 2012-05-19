@@ -76,7 +76,7 @@ public class Palindrom {
         return true;
     }
 
-    public static void test() {
+    public static void main(String[] args) {
 
         String[] tests = {"Reliefpfeiler", "lol", "oman", "Meine Haare lichten sich", "Lagerregal", "Ein Esel lese nie.", "Na, Fakir, Paprika-Fan?", "Madam", "Marktkram", "Gurken hol ohne Krug!", "O, Streit irritiert so!"};
 

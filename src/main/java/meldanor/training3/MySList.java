@@ -115,7 +115,7 @@ public class MySList implements Iterable<Integer> {
 
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         MySList test = new MySList();
 
         test.push_back(85);

@@ -64,7 +64,7 @@ public class PostFixSolver {
         return values.pop();
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         System.out.println(solve("3 4 5 * - 6 5 + 2 - * "));
     }
 }

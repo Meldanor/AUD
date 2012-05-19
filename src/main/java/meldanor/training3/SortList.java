@@ -58,7 +58,7 @@ public class SortList<T extends Comparable<T>> {
         return list.toString();
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         int tests = 100;
 
         SortList<Integer> test = new SortList<Integer>();

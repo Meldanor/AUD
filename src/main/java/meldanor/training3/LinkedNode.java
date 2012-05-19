@@ -61,7 +61,7 @@ public class LinkedNode<T> {
         return sBuilder.toString();
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         LinkedNode<String> winterBegin = new LinkedNode<String>("Winteranfang");
         LinkedNode<String> newYear = new LinkedNode<String>("Neujahr");
         winterBegin.setNext(newYear);

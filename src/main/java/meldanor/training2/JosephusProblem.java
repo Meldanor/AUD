@@ -58,7 +58,7 @@ public class JosephusProblem {
 
     private static Set<String> surviver = new HashSet<String>(8);
 
-    public static void test() {
+    public static void main(String[] args) {
         // people who have to survive
         surviver.add("Josepheus");
         surviver.add("Marius");

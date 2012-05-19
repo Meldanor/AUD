@@ -53,7 +53,7 @@ public class RecursionToStack {
         return sum + n;
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         Random rand = new Random();
         int j = 0;
         System.out.println("N\tRec\tStack\tIter");

@@ -71,7 +71,7 @@ public class MyDList<T> extends DList<T> {
         return copy;
     }
 
-    public static void test() {
+    public static void main(String[] args) {
         // 0 - 9
         MyDList<Integer> list1 = new MyDList<Integer>();
         for (int i = 0; i < 10; ++i)
