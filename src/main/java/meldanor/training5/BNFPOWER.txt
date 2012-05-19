@@ -1,0 +1,11 @@
+<expression> ::= <sum>
+<sum>        ::= <product> |
+                 <product> "+" <sum> |
+                 <product> "-" <sum>
+<product>    ::= <factor> |
+                 <factor> "*" <product> |
+                 <factor> "/" <product>
+<factor>     ::= <number> | <symbol> |
+                 "-" <factor> | "+" <factor> |
+                 "(" <expression> ")"
+<power>		 ::= <sum> "^" <sum>
