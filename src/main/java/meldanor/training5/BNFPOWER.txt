@@ -4,8 +4,8 @@
                  <product> "-" <sum>
 <product>    ::= <factor> |
                  <factor> "*" <product> |
-                 <factor> "/" <product>
-<factor>     ::= <number> | <symbol> |
+                 <factor> "/" <product> |
+<factor>     ::= <number> | <symbol> | <power> |
                  "-" <factor> | "+" <factor> |
                  "(" <expression> ")"
-<power>		 ::= <sum> "^" <sum>
+<power>		 ::= <factor> "^" <factor>
