@@ -15,6 +15,9 @@ package meldanor.training5;
  *
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 import aud.BinaryTree;
 
 public class MyBinTree<T> extends BinaryTree<T> {
@@ -31,11 +34,16 @@ public class MyBinTree<T> extends BinaryTree<T> {
 
         int height = height();
         int maxWidth = Integer.MIN_VALUE;
+
+        List<BinaryTree<T>> subTrees = new ArrayList<BinaryTree<T>>();
+        for (BinaryTree<T> subTree : this.levelorder())
+            subTrees.add(subTree);
+
         int curWidth = 0;
         // GO THROUGH EVERY HEIGHT
         for (int i = 0; i < height; ++i) {
             // COUNT TREE WHICH HAS THE NIVEAU i
-            for (BinaryTree<T> subtree : this.levelorder()) {
+            for (BinaryTree<T> subtree : subTrees) {
                 // HAS THE NIVEAU
                 if (getNiveau(subtree) == i)
                     ++curWidth;
