@@ -44,7 +44,7 @@ public class RBTreeExample extends SingleStepper {
         tree.insert(7, null);    example.halt("7");
         tree.insert(3, null);    example.halt("3");
         tree.insert(4, null);    example.halt("4");
-        tree.insert(5, null);    example.halt("5");
+        tree.insert(2, null);    example.halt("2");
         tree.insert(1, null);    example.halt("1");
         example.halt("QUIT");
 
