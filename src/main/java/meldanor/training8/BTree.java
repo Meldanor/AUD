@@ -14,7 +14,6 @@ package meldanor.training8;
  * @author Meldanor
  *
  */
-import aud.KTreeNode;
 import aud.util.Graphvizable;
 
 public class BTree<Key extends Comparable<Key>> implements Graphvizable {
