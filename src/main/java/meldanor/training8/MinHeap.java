@@ -15,12 +15,11 @@ package meldanor.training8;
  *
  */
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class MinHeap<T extends Comparable<T>> {
 
     private ArrayList<T> heap;
-
-    private int counter;
 
     public MinHeap() {
         heap = new ArrayList<T>(16);
@@ -41,18 +40,28 @@ public class MinHeap<T extends Comparable<T>> {
 
     public void upHeap(int k) {
         T e = heap.get(k);
-        T temp = heap.get(k / 2);
-        while (k > 0 && e.compareTo(temp) > 1) {
-            heap.set(k, temp);
+        while (k > 0 && e.compareTo(heap.get(k / 2)) < 0) {
+            heap.set(k, heap.get(k / 2));
             k /= 2;
-            temp = heap.get(k);
         }
 
         heap.set(k, e);
     }
 
     public void downHeap(int k) {
-        // TODO: implementation
+        T e = heap.get(k);
+        while (k <= heap.size()) {
+            int j = 2 * k;
+            if (heap.get(j).compareTo(heap.get(j + 1)) > 0)
+                ++j;
+            if (e.compareTo(heap.get(j)) <= 0)
+                break;
+
+            heap.set(k, heap.get(j));
+            k = j;
+        }
+
+        heap.set(k, e);
     }
 
     public void insert(T obj) {
@@ -66,32 +75,19 @@ public class MinHeap<T extends Comparable<T>> {
     }
 
     public static void main(String[] args) {
+
         MinHeap<Character> heap = new MinHeap<Character>();
-        heap.insert('X'); 
-        System.out.println(heap);
-        
-        heap.insert('T'); 
-        System.out.println(heap);
-        
-        heap.insert('O'); 
-        System.out.println(heap);
-        
-        heap.insert('G'); 
-        System.out.println(heap);
-        
-        heap.insert('S'); 
-        System.out.println(heap);
-        
-        heap.insert('M'); 
-        System.out.println(heap);
-        
-        heap.insert('X'); 
-        System.out.println(heap);
-        
-        heap.insert('X'); 
-        System.out.println(heap);
-        
-        heap.insert('X'); 
-        System.out.println(heap);
+        Character[] chars = {'X', 'T', 'O', 'G', 'S', 'M', 'N', 'A', 'E', 'R', 'A', 'I'};
+        for (Character c : chars) {
+            heap.insert(c);
+            System.out.println(heap);
+        }
+
+        System.out.println();
+        PriorityQueue<Character> queue2 = new PriorityQueue<Character>();
+        for (Character c : chars) {
+            queue2.add(c);
+            System.out.println(queue2);
+        }
     }
 }
