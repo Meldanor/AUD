@@ -20,8 +20,10 @@ public class MinHeap<T extends Comparable<T>> {
 
     private ArrayList<T> heap;
 
+    private int counter;
+
     public MinHeap() {
-        // TODO: implementation
+        heap = new ArrayList<T>(16);
     }
 
     public ArrayList<T> getHeap() {
@@ -30,11 +32,23 @@ public class MinHeap<T extends Comparable<T>> {
     }
 
     public int getSize() {
-        // TODO: implementation
+        return heap.size();
     }
 
     public boolean isEmpty() {
-        // TODO: implementation
+        return heap.isEmpty();
+    }
+
+    public void upHeap(int k) {
+        T e = heap.get(k);
+        T temp = heap.get(k / 2);
+        while (k > 0 && e.compareTo(temp) > 1) {
+            heap.set(k, temp);
+            k /= 2;
+            temp = heap.get(k);
+        }
+
+        heap.set(k, e);
     }
 
     public void downHeap(int k) {
@@ -42,14 +56,42 @@ public class MinHeap<T extends Comparable<T>> {
     }
 
     public void insert(T obj) {
-        // TODO: implementation
+        heap.add(obj);
+        upHeap(heap.size() - 1);
     }
 
     public String toString() {
         // do not change because of backend-control
         return heap.toString();
     }
+
     public static void main(String[] args) {
-        // TODO: test
+        MinHeap<Character> heap = new MinHeap<Character>();
+        heap.insert('X'); 
+        System.out.println(heap);
+        
+        heap.insert('T'); 
+        System.out.println(heap);
+        
+        heap.insert('O'); 
+        System.out.println(heap);
+        
+        heap.insert('G'); 
+        System.out.println(heap);
+        
+        heap.insert('S'); 
+        System.out.println(heap);
+        
+        heap.insert('M'); 
+        System.out.println(heap);
+        
+        heap.insert('X'); 
+        System.out.println(heap);
+        
+        heap.insert('X'); 
+        System.out.println(heap);
+        
+        heap.insert('X'); 
+        System.out.println(heap);
     }
 }

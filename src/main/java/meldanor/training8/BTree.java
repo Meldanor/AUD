@@ -36,18 +36,18 @@ public class BTree<Key extends Comparable<Key>> implements Graphvizable {
     /** insert entry     
     @return {@code true} if {@code key} was not an entry of child before
      */
-    public boolean insert(Key key) {
-        // TODO: implement
-    }
-
-    protected boolean insert(KTreeNode<Key> node, Key key) {
-        // It could be usefull to use the recursive structur to implement insert.
-        // This method can be empty if your implementation does not need it.
-    }
-
-    public int height() {
-        // TODO: calculate the height
-    }
+//    public boolean insert(Key key) {
+//        // TODO: implement
+//    }
+//
+//    protected boolean insert(KTreeNode<Key> node, Key key) {
+//        // It could be usefull to use the recursive structur to implement insert.
+//        // This method can be empty if your implementation does not need it.
+//    }
+//
+//    public int height() {
+//        // TODO: calculate the height
+//    }
 
     public static void main(String[] args) {
         // TODO: Test and visualize your BTree

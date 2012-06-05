@@ -30,9 +30,9 @@ public class HeapSort<T extends Comparable<T>> {
         return heap;
     }
 
-    public T remove() {
-        // TODO: implementation
-    }
+//    public T remove() {
+//        // TODO: implementation
+//    }
 
     public void heapSort() {
         // TODO: implementation
