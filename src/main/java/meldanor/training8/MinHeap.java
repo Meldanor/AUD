@@ -39,19 +39,24 @@ public class MinHeap<T extends Comparable<T>> {
     }
 
     public void upHeap(int k) {
+
         T e = heap.get(k);
-        while (k > 0 && e.compareTo(heap.get(k / 2)) < 0) {
-            heap.set(k, heap.get(k / 2));
-            k /= 2;
+        while (k > 0 && isLess(e, heap.get((k - 1) / 2))) {
+            heap.set(k, heap.get((k - 1) / 2));
+            k = (k - 1) / 2;
         }
 
         heap.set(k, e);
     }
 
+    private boolean isLess(T e1, T e2) {
+        return e1.compareTo(e2) < 0;
+    }
+
     public void downHeap(int k) {
         T e = heap.get(k);
         while (k <= heap.size()) {
-            int j = 2 * k;
+            int j = (2 * k) + 1;
             if (heap.get(j).compareTo(heap.get(j + 1)) > 0)
                 ++j;
             if (e.compareTo(heap.get(j)) <= 0)
@@ -78,16 +83,15 @@ public class MinHeap<T extends Comparable<T>> {
 
         MinHeap<Character> heap = new MinHeap<Character>();
         Character[] chars = {'X', 'T', 'O', 'G', 'S', 'M', 'N', 'A', 'E', 'R', 'A', 'I'};
-        for (Character c : chars) {
+        for (Character c : chars)
             heap.insert(c);
-            System.out.println(heap);
-        }
 
+        System.out.println(heap);
         System.out.println();
         PriorityQueue<Character> queue2 = new PriorityQueue<Character>();
-        for (Character c : chars) {
+        for (Character c : chars)
             queue2.add(c);
-            System.out.println(queue2);
-        }
+
+        System.out.println(queue2);
     }
 }
