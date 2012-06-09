@@ -1,8 +1,10 @@
 package meldanor.training8;
 
-import aud.util.Graphvizable;
+import aud.BinarySearchTree;
+import aud.Vector;
 import aud.util.GraphvizDecorable;
 import aud.util.GraphvizDecorator;
+import aud.util.Graphvizable;
 import aud.util.Sys;
 
 /** Node in a k-ary search tree.<p>

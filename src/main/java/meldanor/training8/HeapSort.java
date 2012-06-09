@@ -29,6 +29,10 @@ public class HeapSort<T extends Comparable<T>> {
         // do not change because of backend-control
         return heap;
     }
+    
+    public void insert(T e) {
+        
+    }
 
 //    public T remove() {
 //        // TODO: implementation
