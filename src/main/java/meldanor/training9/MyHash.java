@@ -11,11 +11,11 @@
 package meldanor.training9;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeSet;
 
 public class MyHash {
     public class BucketArray {
@@ -121,21 +121,20 @@ public class MyHash {
     }
 
     private int getHash(String s) {
+
         int hash = 0;
         char[] chars = s.toCharArray();
 
         // LET THE MAGIC BEGIN
         for (int i = 0; i < chars.length; ++i) {
-            hash = primNumbers.get(Character.toLowerCase(chars[i])) * hash + chars[i];
+            hash -= primNumbers.get(Character.toLowerCase(chars[i])) * hash + chars[i] - i;
         }
 
         return hash;
     }
 
     public void insert(String s) {
-        System.out.println(s);
-//        e.insert(Math.abs(getHash(s)) % size, s);
-        e.insert(Math.abs(s.hashCode() % size), s);
+        e.insert(Math.abs(getHash(s)) % size, s);
     }
 
     public static void main(String[] args) {
@@ -143,17 +142,26 @@ public class MyHash {
         int size = 1249; // you have to use this value
         MyHash hash = new MyHash(size);
         try {
-            File f = new File("w1.txt");
-            System.out.println(f.getAbsolutePath());
+            // USE BUFFERED READER INSTEAD OF DATAINPUTSTREAM (IS FASTER)
             BufferedReader s = new BufferedReader(new FileReader("w1.txt"));
+
+            TreeSet<String> set = new TreeSet<String>();
             // use correct Path
             String line = "";
+            // READ FROM FILE AND SORT OUT DOUBLE WORDS
             while ((line = s.readLine()) != null)
-                hash.insert(line);
+                set.add(line);
+
+            // INSERT INTO HASH MAP UNICATE WORDS
+            for (String string : set)
+                hash.insert(string);
+
+            // CLOSE THE STREAM...
             s.close();
         } catch (IOException e) {
             System.out.println("File not found");
         }
+
         System.out.println(hash.e.toString());
         System.out.println("Collisions: " + hash.e.getCollisions() + "\n");
     }
