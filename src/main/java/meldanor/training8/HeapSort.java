@@ -156,7 +156,7 @@ public class HeapSort<T extends Comparable<T>> {
         // [1, 3, 5, 6, 7, 8, 9]
         System.out.println(heap);
 
-        HeapSort<Integer> heap2 = new HeapSort<>();
+        HeapSort<Integer> heap2 = new HeapSort<Integer>();
         heap2.insert(8);
         heap2.insert(6);
         heap2.insert(7);
