@@ -4,6 +4,7 @@ public class SimpleTree<T extends Comparable<T>> {
 
     public class Node {
 
+        @SuppressWarnings("unused")
         private SimpleTree<T> parent;
 
         private SimpleTree<T> leftChild = new SimpleTree<T>();
