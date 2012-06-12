@@ -127,6 +127,8 @@ public class MyHash {
 
         // LET THE MAGIC BEGIN
         for (int i = 0; i < chars.length; ++i) {
+            if (!primNumbers.containsKey(Character.toLowerCase(chars[i])))
+                System.out.println("s= " + s + " und c= " + chars[i]);
             hash -= primNumbers.get(Character.toLowerCase(chars[i])) * hash + chars[i] - i;
         }
 
@@ -139,11 +141,11 @@ public class MyHash {
 
     public static void main(String[] args) {
         // Idea for test
-        int size = 1249; // you have to use this value
+        int size = 10091; // you have to use this value
         MyHash hash = new MyHash(size);
         try {
             // USE BUFFERED READER INSTEAD OF DATAINPUTSTREAM (IS FASTER)
-            BufferedReader s = new BufferedReader(new FileReader("w1.txt"));
+            BufferedReader s = new BufferedReader(new FileReader("faust.txt"));
 
             TreeSet<String> set = new TreeSet<String>();
             // use correct Path
