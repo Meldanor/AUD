@@ -160,11 +160,13 @@ public class MyHash {
 
             // CLOSE THE STREAM...
             s.close();
+
+            System.out.println(hash.e.toString());
+            System.out.println("Collisions: " + hash.e.getCollisions() + "\n");
+
         } catch (IOException e) {
             System.out.println("File not found");
         }
 
-        System.out.println(hash.e.toString());
-        System.out.println("Collisions: " + hash.e.getCollisions() + "\n");
     }
 }
