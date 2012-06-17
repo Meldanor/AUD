@@ -18,15 +18,13 @@ import java.util.Arrays;
  */
 public class IceBox<T> {
 
-    // simple Hashtable with linear/quadratic probing
-    // capacity is big enough
     private T[] table;
     private int size; // current number of elements
     private int capacity;
 
     private int loadFactor;
 
-    private static final int MIN_SIZE = 16;
+    private static final int MIN_SIZE = 13;
 
     public IceBox() {
         this(MIN_SIZE);
@@ -40,33 +38,14 @@ public class IceBox<T> {
     }
 
     private int hash(T obj) {
-        return (Math.abs(obj.hashCode()) % capacity);
+        return Math.abs(obj.hashCode()) % capacity;
     }
 
     public void add(T obj) {
         addQuad(obj);
     }
 
-//    private int addLin(T obj) {
-//        // WE NEED TO RESIZE THE HASH TABLE
-//        if (size >= loadFactor)
-//            resize();
-//
-//        // COUNTER FOR COLLISIONS
-//        int collisions = 0;
-//
-//        // SEARCH FOR FREE SPACE
-//        int i;
-//        for (i = hash(obj); table[i] != null; i = (i + 1) % capacity)
-//            ++collisions;
-//
-//        // INSERT VALUE
-//        table[i] = obj;
-//
-//        return collisions;
-//    }
-
-    private int addQuad(T obj) {
+    public int addQuad(T obj) {
         // WE NEED TO RESIZE THE HASH TABLE
         if (size >= loadFactor)
             resize();
@@ -75,13 +54,18 @@ public class IceBox<T> {
         int collisions = 0;
 
         // SEARCH FOR FREE SPACE
-        int i;
+        int i = 0;
         int hash = hash(obj);
-        for (i = 1; table[Math.abs(((i * i) + hash)) % capacity] != null; ++i)
+        int temp = hash;
+        while (table[temp] != null) {
             ++collisions;
+            ++i;
+            temp = Math.abs((hash + (i * i))) % capacity;
+        }
 
         // INSERT VALUE
-        table[Math.abs(((i * i) + hash)) % capacity] = obj;
+        table[temp] = obj;
+        ++size;
 
         return collisions;
     }
@@ -109,12 +93,18 @@ public class IceBox<T> {
 
     public boolean contains(T obj) {
 
-        int i;
-        int p;
+        // SEARCH FOR FREE SPACE
+        int i = 0;
         int hash = hash(obj);
-        for (i = 1, p = ((i * i) + hash) % capacity; table[p] != null; ++i, p = ((i * i) + hash) % capacity)
-            if (table[p].equals(obj))
+        int temp = hash;
+        while (table[temp] != null) {
+            if (table[temp].equals(obj))
                 return true;
+            else {
+                ++i;
+                temp = Math.abs((hash + (i * i))) % capacity;
+            }
+        }
 
         return false;
     }

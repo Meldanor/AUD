@@ -26,7 +26,7 @@ public class HashLinQuad {
 
     private int loadFactor;
 
-    private static final int MIN_SIZE = 16;
+    private static final int MIN_SIZE = 13;
 
     public HashLinQuad() {
         this(MIN_SIZE);
@@ -39,7 +39,7 @@ public class HashLinQuad {
     }
 
     private int hash(int obj) {
-        return (Math.abs(new Integer(obj).hashCode()) % capacity);
+        return Math.abs(obj) % capacity;
     }
 
     public int addLin(int obj) {
@@ -57,6 +57,7 @@ public class HashLinQuad {
 
         // INSERT VALUE
         table[i] = obj;
+        ++size;
 
         return collisions;
     }
@@ -70,13 +71,18 @@ public class HashLinQuad {
         int collisions = 0;
 
         // SEARCH FOR FREE SPACE
-        int i;
+        int i = 0;
         int hash = hash(obj);
-        for (i = 1; table[((i * i) + hash) % capacity] != 0; ++i)
+        int temp = hash;
+        while (table[temp] != 0) {
             ++collisions;
+            ++i;
+            temp = Math.abs((hash + (i * i))) % capacity;
+        }
 
         // INSERT VALUE
-        table[((i * i) + hash) % capacity] = obj;
+        table[temp] = obj;
+        ++size;
 
         return collisions;
     }
@@ -113,7 +119,7 @@ public class HashLinQuad {
             testNumbers[i] = rand.nextInt(50000);
 
         // FILL HASH TABLE WITH LINEAR SON
-        HashLinQuad hashTable = new HashLinQuad(1249);
+        HashLinQuad hashTable = new HashLinQuad();
         int collisions = 0;
         for (int i = 0; i < testNumbers.length; ++i)
             collisions += hashTable.addLin(testNumbers[i]);
@@ -122,7 +128,7 @@ public class HashLinQuad {
         System.out.println("Collisions=" + collisions);
 
         // FILL HASH TABLE WITH SQUARE SON
-        hashTable = new HashLinQuad(1249);
+        hashTable = new HashLinQuad();
         collisions = 0;
         for (int i = 0; i < testNumbers.length; ++i)
             collisions += hashTable.addQuad(testNumbers[i]);
