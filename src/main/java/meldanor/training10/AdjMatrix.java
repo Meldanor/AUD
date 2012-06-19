@@ -134,11 +134,7 @@ public class AdjMatrix {
         // neighbors from 6 -> 1, 3 and 4
         System.out.println(adjacent(5, m2));
 
-        System.out.println();
+        // true
         System.out.println(hasTriangle(m));
-
-        System.out.println();
-        for (int i = 0; i < m.length; ++i)
-            System.out.println("i=" + i + " -> " + adjacent(i, m));
     }
 }
