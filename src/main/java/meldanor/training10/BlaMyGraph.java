@@ -10,10 +10,11 @@
 
 package meldanor.training10;
 
-import aud.example.graph.MyEdge;
+import aud.example.graph.BreadthFirstSearch;
+import aud.example.graph.DepthFirstSearch;
 import aud.example.graph.MyGraph;
 import aud.example.graph.MyNode;
-import aud.util.DotViewer;
+import aud.util.SingleStepper;
 
 /**
  * @author Meldanor
@@ -58,12 +59,14 @@ public class BlaMyGraph {
         // 5 to 7 and 7 to 5
         t.addEdge(nodes[4], nodes[6]);
 
-        DotViewer.displayWindow(t, "lol");
+        System.out.println("Breitensuche");
+        BreadthFirstSearch bs = new BreadthFirstSearch(t);
+        bs.singlestepper = new SingleStepper((String) null);
+        bs.start(nodes[7]);
 
-        for (MyEdge e : t.edges()) {
-            System.out.println(e);
-        }
-
+        System.out.println("Tiefensuche");
+        DepthFirstSearch ds = new DepthFirstSearch(t);
+        ds.singlestepper = new SingleStepper((String) null);
+        ds.start(nodes[7]);
     }
-
 }
