@@ -58,6 +58,8 @@ public class BlaMyGraph {
         t.addEdge(nodes[4], nodes[5]);
         // 5 to 7 and 7 to 5
         t.addEdge(nodes[4], nodes[6]);
+        // 5 to 8 and 8 to 5
+        t.addEdge(nodes[4], nodes[7]);
 
         System.out.println("Breitensuche");
         BreadthFirstSearch bs = new BreadthFirstSearch(t);
