@@ -14,8 +14,9 @@ package meldanor.training11;
  * @author Meldanor
  *
  */
-import java.util.Iterator;
+import java.util.ArrayList;
 
+import aud.Queue;
 import aud.Stack;
 import aud.example.graph.MyEdge;
 import aud.example.graph.MyGraph;
@@ -26,29 +27,31 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
     GraphSearchIterator(boolean directed) {
         super(directed);
     }
+
     public class DFSIterator implements java.util.Iterator<MyNode> {
 
-        private Stack<MyNode> st;
+        private Queue<MyNode> st = new Queue<MyNode>();
 
         public DFSIterator(MyNode start) {
-            st = new Stack<MyNode>();
             dfs(start);
         }
 
-        private void dfs(MyNode node) {
-            Stack<MyNode> temp = new Stack<MyNode>();
-            temp.push(node);
-            mark(node);
-            MyNode t = null;
-            MyNode t2 = null;
-            while (!temp.is_empty()) {
-                t = temp.pop();
-                mark(t);
-                st.push(t);
-                for (MyEdge edge : getOutEdges(t)) {
-                    t2 = (MyNode) edge.destination();
-                    if (t2.ord != 1)
-                        temp.push(t2);
+        private void dfs(MyNode s0) {
+            Stack<MyNode> open = new Stack<MyNode>();
+            open.push(s0);
+            mark(s0);
+            while (!open.is_empty()) {
+                MyNode s = open.pop();
+                mark(s);
+                visit(s);
+                for (MyEdge e : getOutEdges(s)) {
+                    MyNode t = (MyNode) e.destination();
+
+                    MyNode t2 = (MyNode) e.source();
+                    if (!isMarked(t))
+                        open.push(t);
+                    else if (!isMarked(t2))
+                        open.push(t2);
                 }
             }
         }
@@ -57,12 +60,20 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
             node.ord = 1;
         }
 
+        private boolean isMarked(MyNode node) {
+            return node.ord == 1;
+        }
+
+        private void visit(MyNode node) {
+            st.enqueue(node);
+        }
+
         public boolean hasNext() {
             return !st.is_empty();
         }
 
         public MyNode next() {
-            return st.pop();
+            return st.dequeue();
         }
 
         public void remove() {
@@ -70,8 +81,14 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
         }
     }
 
+    private MyNode start;
+
+    public void setStart(MyNode start) {
+        this.start = start;
+    }
+
     public DFSIterator iterator() {
-        return new DFSIterator(getSomeNode());
+        return new DFSIterator(start != null ? start : getSomeNode());
     }
 
     public static void main(String args[]) {
@@ -84,43 +101,57 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
             nodes[i].setLabel((i + 1) + "");
         }
 
+        ArrayList<MyEdge> edges = new ArrayList<MyEdge>();
+
         // 1 to 2 and 2 to 1
-        g.addEdge(nodes[0], nodes[1]);
+        edges.add(g.addEdge(nodes[0], nodes[1]));
         // 1 to 3 and 3 to 1
-        g.addEdge(nodes[0], nodes[2]);
+        edges.add(g.addEdge(nodes[0], nodes[2]));
         // 1 to 6 and 6 to 1
-        g.addEdge(nodes[0], nodes[5]);
+        edges.add(g.addEdge(nodes[0], nodes[5]));
         // 1 to 7 and 7 to 1
-        g.addEdge(nodes[0], nodes[6]);
+        edges.add(g.addEdge(nodes[0], nodes[6]));
         // 1 to 8 and 8 to 1
-        g.addEdge(nodes[0], nodes[7]);
+        edges.add(g.addEdge(nodes[0], nodes[7]));
 
         // 2 to 8 and 8 to 2
-        g.addEdge(nodes[1], nodes[7]);
+        edges.add(g.addEdge(nodes[1], nodes[7]));
 
         // 3 to 8 and 8 to 3
-        g.addEdge(nodes[2], nodes[7]);
+        edges.add(g.addEdge(nodes[2], nodes[7]));
 
         // 4 to 5 and 5 to 4
-        g.addEdge(nodes[3], nodes[4]);
+        edges.add(g.addEdge(nodes[3], nodes[4]));
         // 4 to 6 and 6 to 4
-        g.addEdge(nodes[3], nodes[5]);
+        edges.add(g.addEdge(nodes[3], nodes[5]));
 
         // 5 to 6 and 6 to 5
-        g.addEdge(nodes[4], nodes[5]);
+        edges.add(g.addEdge(nodes[4], nodes[5]));
         // 5 to 7 and 7 to 5
-        g.addEdge(nodes[4], nodes[6]);
+        edges.add(g.addEdge(nodes[4], nodes[6]));
         // 5 to 8 and 8 to 5
-        g.addEdge(nodes[4], nodes[7]);
+        edges.add(g.addEdge(nodes[4], nodes[7]));
 
-        Iterator<MyEdge> te = g.getEdgeIterator();
-        while(te.hasNext())
-            System.out.println(te.next());
+//        System.out.println(edges);
+//
+//        ArrayList<MyEdge> edges2 = new ArrayList<MyEdge>();
+//        Iterator<MyEdge> iter = g.getEdgeIterator();
+//        while (iter.hasNext())
+//            edges2.add(iter.next());
+//
+//        Collections.sort(edges2);
+//
+//        System.out.println(edges2);
 
-//        DotViewer.displayWindow(g, "String");
+        g.setStart(nodes[0]);
 
         for (MyNode el : g)
             System.out.print(el.getLabel() + " ");
+//
+//        System.out.println("Tiefensuche");
+//        DepthFirstSearch ds = new DepthFirstSearch(g);
+//        ds.singlestepper = new SingleStepper((String) null);
+//        ds.start(nodes[0]);
 
     }
 }
