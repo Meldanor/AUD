@@ -15,9 +15,8 @@ package meldanor.training11;
  *
  */
 import java.util.ArrayList;
+import java.util.Stack;
 
-import aud.Queue;
-import aud.Stack;
 import aud.example.graph.MyEdge;
 import aud.example.graph.MyGraph;
 import aud.example.graph.MyNode;
@@ -30,29 +29,21 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
 
     public class DFSIterator implements java.util.Iterator<MyNode> {
 
-        private Queue<MyNode> st = new Queue<MyNode>();
+        private Stack<MyNode> st = new Stack<MyNode>();
 
         public DFSIterator(MyNode start) {
             dfs(start);
         }
 
         private void dfs(MyNode s0) {
-            Stack<MyNode> open = new Stack<MyNode>();
-            open.push(s0);
             mark(s0);
-            while (!open.is_empty()) {
-                MyNode s = open.pop();
-                mark(s);
-                visit(s);
-                for (MyEdge e : getOutEdges(s)) {
-                    MyNode t = (MyNode) e.destination();
-
-                    MyNode t2 = (MyNode) e.source();
-                    if (!isMarked(t))
-                        open.push(t);
-                    else if (!isMarked(t2))
-                        open.push(t2);
-                }
+            visit(s0);
+            for (MyEdge e : getOutEdges(s0)) {
+                MyNode t = (MyNode) e.destination();
+                if (t == s0)
+                    t = (MyNode) e.source();
+                if (!isMarked(t))
+                    dfs(t);
             }
         }
 
@@ -65,15 +56,15 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
         }
 
         private void visit(MyNode node) {
-            st.enqueue(node);
+            st.add(node);
         }
 
         public boolean hasNext() {
-            return !st.is_empty();
+            return !st.isEmpty();
         }
 
         public MyNode next() {
-            return st.dequeue();
+            return st.pop();
         }
 
         public void remove() {
