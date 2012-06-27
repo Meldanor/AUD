@@ -158,28 +158,78 @@ public class GraphConnectivity {
             }
             System.out.println();
         }
+        System.out.println();
+    }
+
+    // SHOW WHETHER THERE IS A WAY TO A NODE OR NOT
+    private static void warshall(int[][] a) {
+
+        // Add Einheitsmatrix
+        for (int i = 0; i < a.length; ++i)
+            a[i][i] = 1;
+
+        for (int k = 0; k < a.length; ++k) {
+            for (int i = 0; i < a[0].length; ++i) {
+                if (a[i][k] == 1) {
+                    for (int j = 0; j < a.length; ++j) {
+                        if (a[k][j] == 1) {
+                            a[i][j] = 1;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
 
         // @formatter:off
         int[][] a = {
-                new int[] { 1 , 2 , 3 },
-                new int[] { 4 , 5 , 6 }
+               // 1  2  3  4  5  6
+                { 0 ,1 ,0 ,0 ,0 ,0 }, // 1
+                { 1 ,0 ,1 ,1 ,0 ,0 }, // 2
+                { 0 ,1 ,0 ,0 ,1 ,0 }, // 3
+                { 0 ,1 ,0 ,0 ,1 ,0 }, // 4
+                { 0 ,0 ,1 ,1 ,0 ,1 }, // 5
+                { 0 ,0 ,0 ,0 ,1 ,0 }, // 6
         };
-
-        int[][] b = {
-                new int[] { 6 , -1 },
-                new int[] { 3 , 2 },
-                new int[] { 0 , -3 }
-        };
-        
         // @formatter:on
 
-//        printMatrix(a);
-//        System.out.println();
-//        printMatrix(b);
+        printMatrix(a);
 
+        // 1 0 1 1 0 0
+        // 0 3 0 0 2 0
+        // 1 0 2 2 0 1
+        // 1 0 2 2 0 1
+        // 0 2 0 0 3 0
+        // 0 0 1 1 0 1
+        int[][] c = matrixNormal(a, a);
+        printMatrix(c);
+
+        // @formatter:off
+        int[][] b = {
+                // 1  2  3  4  5  6
+                 { 0 ,1 ,0 ,0 ,0 ,0 }, // 1
+                 { 1 ,0 ,1 ,1 ,0 ,0 }, // 2
+                 { 0 ,1 ,0 ,0 ,1 ,0 }, // 3
+                 { 0 ,1 ,0 ,0 ,1 ,0 }, // 4
+                 { 0 ,0 ,1 ,1 ,0 ,1 }, // 5
+                 { 0 ,0 ,0 ,0 ,1 ,0 }, // 6
+         };
+        // @formatter:on
+        // 1 1 1 1 1 1
+        // 1 1 1 1 1 1
+        // 1 1 1 1 1 1
+        // 1 1 1 1 1 1
+        // 1 1 1 1 1 1
+        // 1 1 1 1 1 1
+        warshall(b);
+        printMatrix(b);
+
+        testStrassen();
+    }
+
+    public static void testStrassen() {
         Random rand = new Random();
         int size = (rand.nextInt(20) + 20) * 2;
         int[][] d = new int[size][size];
