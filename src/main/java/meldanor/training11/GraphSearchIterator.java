@@ -47,6 +47,24 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
             }
         }
 
+        private void dfs2(MyNode s0) {
+            Stack<MyNode> open = new Stack<MyNode>();
+            open.push(s0);
+            mark(s0);
+            while (!open.isEmpty()) {
+                MyNode s = open.pop();
+                mark(s);
+                visit(s);
+                for (MyEdge e : getOutEdges(s)) {
+                    MyNode t = (MyNode) e.destination();
+                    if (t == s)
+                        t = (MyNode) e.source();
+                    if (!isMarked(t))
+                        open.push(t);
+                }
+            }
+        }
+
         private void mark(MyNode node) {
             node.ord = 1;
         }
@@ -123,26 +141,10 @@ public class GraphSearchIterator extends MyGraph implements Iterable<MyNode> {
         // 5 to 8 and 8 to 5
         edges.add(g.addEdge(nodes[4], nodes[7]));
 
-//        System.out.println(edges);
-//
-//        ArrayList<MyEdge> edges2 = new ArrayList<MyEdge>();
-//        Iterator<MyEdge> iter = g.getEdgeIterator();
-//        while (iter.hasNext())
-//            edges2.add(iter.next());
-//
-//        Collections.sort(edges2);
-//
-//        System.out.println(edges2);
-
         g.setStart(nodes[0]);
 
         for (MyNode el : g)
             System.out.print(el.getLabel() + " ");
-//
-//        System.out.println("Tiefensuche");
-//        DepthFirstSearch ds = new DepthFirstSearch(g);
-//        ds.singlestepper = new SingleStepper((String) null);
-//        ds.start(nodes[0]);
 
     }
 }

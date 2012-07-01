@@ -12,14 +12,11 @@ package meldanor.training11;
 
 import java.util.ArrayList;
 
-import aud.example.graph.DepthFirstSearch;
 import aud.example.graph.DijkstraShortestPaths;
 import aud.example.graph.MyEdge;
 import aud.example.graph.MyGraph;
 import aud.example.graph.MyNode;
 import aud.example.graph.TraversalExample;
-import aud.util.DotViewer;
-import aud.util.SingleStepper;
 
 /**
  * @author Meldanor
