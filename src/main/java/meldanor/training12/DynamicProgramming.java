@@ -24,6 +24,9 @@ public class DynamicProgramming {
     // DYNAMIC PROGRAMMING
 
     public static int f(int a, int b) {
+        // FAST RETURN -> DON'T NEED TO INITATE THE ARRAY
+        if (a == 0 || b == 0)
+            return 1;
 
         results = new int[a + 1][b + 1];
         for (int i = 0; i < results.length; ++i)
@@ -35,6 +38,7 @@ public class DynamicProgramming {
     }
 
     private static int fRek(int a, int b) {
+        // IS THE PARTIAL SOLUTION EXISTING?
         if (results[a][b] == 0)
             results[a][b] = fRek(a - 1, b) + (2 * fRek(a, b - 1));
 
@@ -53,7 +57,7 @@ public class DynamicProgramming {
     private static final int TEST_COUNTER = 50;
     private static final int MAX_A = 15;
     private static final int MAX_B = 15;
-    
+
     public static void main(String[] args) {
 
         // GENERATE TEST NUMBERS
@@ -62,8 +66,8 @@ public class DynamicProgramming {
         Random rand = new Random();
 
         for (int i = 0; i < TEST_COUNTER; ++i) {
-            testPairs[i][0] = rand.nextInt(MAX_A) + 1;
-            testPairs[i][1] = rand.nextInt(MAX_B) + 1;
+            testPairs[i][0] = rand.nextInt(MAX_A);
+            testPairs[i][1] = rand.nextInt(MAX_B);
         }
 
         // MEASURE VALUES
