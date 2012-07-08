@@ -87,11 +87,11 @@ public class Dijkstra {
         TraversalExample ts = new TraversalExample();
 
         DijkstraShortestPaths ds = new DijkstraShortestPaths(graph);
+        ts.traversal = ds;
         ds.singlestepper = ts;
         ds.nsteps = 1;
         ds.verbose = 0;
         ds.start(nodes.get(0));
 
-        ts.traversal = ds;
     }
 }
