@@ -93,7 +93,7 @@ public class DynamicProgramming {
 
             // NON DYNAMIC
             t2 = System.nanoTime();
-            System.out.println("Dynamic:\ta=" + a + "\tb=" + b + "\tResult = " + f2(a, b));
+            System.out.println("Non-Dynamic:\ta=" + a + "\tb=" + b + "\tResult = " + f2(a, b));
             total2 += System.nanoTime() - t2;
 
             System.out.println();
