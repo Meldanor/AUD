@@ -10,10 +10,28 @@
 
 package meldanor.training3;
 
-
 /**
- * @author Meldanor
+ * <pre>
+ * Schreiben Sie eine Klasse LinkedNode zur Erzeugung von einfach verketteten Knoten in der abgebildeten Form.
  * 
+ *     Die Klasse soll die Atribute
+ * 
+ *     public class LinkedNode {
+ *        T data_;
+ *        LinkedNode next_; 
+ *        ...
+ *     }
+ * 
+ *     enthalten. Schreiben Sie entsprechende Konstruktoren und die Getter-und Setter-Funktionen.
+ *     Schreiben Sie eine Funktion
+ * 
+ *     public String toText(),
+ * 
+ *     die die Knoteninhalte von this bis zum Ende der verketteten Knoten ausgibt.
+ *     Erzeugen Sie in main die unten abgebildeten verketteten Knoten und geben Sie diese Liste zur Kontrolle mit Hilfe der Funktion toText() aus (Aufruf für unten stehende Abbildung: head.toText()).
+ *     Fügen Sie anschließend (in main) zwischen den Elementen "Weihnachten" und "Neujahr" ein weiteres Element "Silvester" ein und geben Sie auch diese Liste aus.
+ *     Hinweis: Die Liste kann mit oder ohne head-Element implementiert werden. Die unterschiedlichen Ansätze werden in der Übung diskutiert.
+ * </pre>
  */
 public class LinkedNode<T> {
 

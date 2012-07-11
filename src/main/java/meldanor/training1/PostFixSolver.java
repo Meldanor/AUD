@@ -14,8 +14,20 @@ import java.util.Stack;
 import java.util.regex.Pattern;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Ein arithmetischer Term in der Infix-Notation
  * 
+ * "(3-4*5)*(6+5-2)"
+ * 
+ * kann mit Hilfe eines Stacks (für die Operatoren nebst linker Klammer) in die sogenannte umgekehrt polnische Notation (UPN oder Postfix-Notation) überführt werden. Für obiges Beispiel lautet die UPN-Notation
+ * 
+ * 3 4 5 * - 6 5 + 2 - *
+ * 
+ * Beachten Sie die Operatorprioritäten, und dass bei Operatoren gleichen Ranges Linksassoziativität gilt.
+ * 
+ *     Demonstrieren Sie zunächst den Algorithmus zum Umformen eines Terms von Infix- in Postfix-Notation am obigen Beispiel. Zeigen Sie dabei wie der Stack auf- und abgebaut wird.
+ *     Formulieren Sie die einzelnen Schritte des Algorithmus im Pseudocode.
+ * </pre>
  */
 public class PostFixSolver {
 

@@ -19,8 +19,13 @@ import aud.example.graph.MyNode;
 import aud.example.graph.TraversalExample;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Erläutern Sie den in der Vorlesung vorgestellten Dijkstra-Algorithmus zur Suche kürzester Wege an diesem Beispiel. Geben Sie dabei alle Schritte an, wenn Sie bei Knoten 0 beginnen.
  * 
+ *     Konstruieren Sie sich einen (möglichst einfachen) gewichteten Graphen, bei dem sich für mindestens einen Knoten während der Anwendung des Algorithmus von Dijkstra die Approximation für die Distanz mindestens zweimal ändert.
+ *     Können Sie Ihr Beispiel so verallgemeinern, dass sich für ein beliebig vorgegebenes n (mit n > 2) für mindestens einen Knoten während der Anwendung des Algorithmus von Dijkstra die Approximation für die Distanz mindestens n-mal ändert?
+ *     Geben Sie einen (möglichst einfachen) Graphen an, mit dem Sie illustrieren, dass der Algorithmus von Dijkstra im Falle negativer Kantengewichte im allgemeinen nicht korrekt arbeitet.
+ * </pre>
  */
 public class Dijkstra {
 

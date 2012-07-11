@@ -11,8 +11,21 @@
 package meldanor.training11;
 
 /**
- * @author Meldanor
- *
+ * <pre>Schreiben Sie einen Iterator, der die Knoten eines zusammenhängenden Graphen in der Reihenfolge der Tiefensuche durchläuft.
+
+ Implementieren Sie innerhalb der Klasse
+ public class GraphSearchIterator extends MyGraph
+ die Klasse
+
+ public class DFSIterator implements java.util.Iterator<MyNode>,
+
+ mit den üblichen Funktionen wie hasNext() und next(). Dabei soll die Iteration mit Hilfe der Tiefensuche über die Knoten des Graphen (unter Nutzung eines Stacks) erfolgen.
+ Testen Sie Ihren DFSIterator in main mit der foreach-Schleife.
+ Beisiel:
+ für folgenden Beispielgraphen
+ könnten die Knoten mit der Schleife "for (MyNode el: g){...}" in der Reihenfolge 1, 8, 5, 7, 6, 4, 3, 2 durchlaufen werden, sofern 1 der Startknoten war.
+ Wie müssen Sie Ihre Klasse DFSIterator verändern, damit alle Knoten eines nicht zusammenhängenden Graphen iteriert werden können?
+ </pre>
  */
 import java.util.ArrayList;
 import java.util.Stack;

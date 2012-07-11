@@ -11,10 +11,26 @@
 package meldanor.training4;
 
 import aud.BinaryTree;
+
 import aud.util.DotViewer;
+
 /**
- * @author Meldanor
+ * <pre>
+ * Schreiben Sie eine Klasse BuildBinTree,
  * 
+ *     die den abgebildeten Baum mit Hilfe der Klasse BinaryTree<T> aufbaut und in den Traversierungen
+ *         preorder
+ *         inorder
+ *         postorder
+ *         levelorder
+ *     ausgibt.
+ *     Der Baum ist auﬂerdem mit Hilfe von DotViewer zu visualisieren.
+ * 
+ * 
+ * 
+ * Hinweis:
+ * Die Klasse BinaryTree<T> finden Sie unter den "Folien und Materialien" auf der Seite "Code/Beispiele".
+ * </pre>
  */
 public class BuildBinTree {
 

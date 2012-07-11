@@ -11,8 +11,22 @@
 package meldanor.training1;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Beschreiben Sie kurz was eine Endrekursion (iterative Rekursion, engl.tail recursion) ist.
+ *     Schreiben Sie jeweils eine endrekursive Methode.
+ *         
+ *         Es soll mit der endrekursive Methode
  * 
+ *         <b>public static int pot2TailRec(int n)</b>
+ * 
+ *         die Zweierpotenz einer natürlichen Zahl n berechnet werden. So soll beispielsweise pot2TailRec(4) die Zahl 16 liefern.
+ *         Für die Bestimmung der befreundeten Zahlen (siehe Blatt03 Wintersemester) benötigt man die Summe der Teiler einer natürlichen Zahl n. Dabei wird 1 als Teiler von n betrachtet und mitsummiert, die Zahl n selbst aber nicht. Beispielsweise ist die Summe der Teiler von 6 gleich 1 + 2 + 3. Schreiben Sie eine endrekursive Methode
+ * 
+ *         <b>static public int sumFacTailRec(int n)</b>
+ * 
+ *         zur Berechnung der Summe der Teiler von n.
+ *         Testen Sie beide Methoden gewissenhaft an geeigneten Beispielen, damit kein StackOverflow auftritt.
+ * </pre>
  */
 public class TailRecursion {
 

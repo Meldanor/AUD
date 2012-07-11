@@ -17,8 +17,11 @@ import aud.example.graph.MyNode;
 import aud.util.SingleStepper;
 
 /**
- * @author Meldanor
- * 
+ * <pre>
+ *     Geben Sie an, in welcher Reihenfolge Sie bei einer Breitensuche den obigen Graphen die einzelnen Knoten (mit den dazugehörigen Distanzen) erreichen, wenn Sie im Knoten 8 starten. Wenn mehrere Knoten als nächstes besucht werden können, wählen Sie jeweils den mit dem wertmäßig kleinsten Wert. Beschreiben Sie dabei kurz den zugrunde liegende Algorithmus.
+ *     Beschreiben Sie den Algorithmus zur Tiefensuche am obigen Beispiel. Welche Reihenfolge ergibt sich bei einer Tiefensuche, wenn Sie im Knoten 8 starten?
+ *     Erzeugen und visualisieren sie den obigen Graphen mit Hilfe der Klasse MyGraph (siehe Code/Beispiele unter Folien und Materialien).
+ * </pre>
  */
 public class BlaMyGraph {
 

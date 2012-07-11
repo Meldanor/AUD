@@ -10,14 +10,23 @@
 
 package meldanor.training8;
 
-/**
- * @author Meldanor
- *
- */
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+/**
+ * <pre>
+ *     Zeigen Sie anhand der Zahlenfolge 8, 3, 7, 1, 5, 9, 6 die Sortierung mit Heap-Sort auf der Basis eines MaxHeaps. Veranschaulichen Sie den Algorithmus durch Angabe aller notwendigen Schritte!
+ *     Schreiben Sie in der Klasse HeapSort verschiedene Methoden:
+ *         public T remove(), die das größte Element zurückgibt und die Heap-Eigenschaft wieder herstellt. Der Heap, also das zugrunde liegende Array, soll in seiner Größe bestehen bleiben (ändern Sie dazu auch das size Parameter).
+ *         sowie
+ *         public void heapSort(), die den Heap inplace aufsteigend sortiert.
+ *     Ist Heapsort stabil? Begründen Sie Ihre Aussage.
+ *     Begründen Sie, warum HeapSort mit einer Komplexität von O(n logn) arbeitet, wobei n die Anzahl der zu sortierenden Objekte ist.
+ * 
+ * Hinweis: Die Methode insert bitte mit einreichen. Sie wird für die Backend-Kontrolle benötigt.
+ * </pre>
+ */
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class MinHeap<T extends Comparable<T>> {
 

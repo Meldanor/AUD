@@ -10,16 +10,31 @@
 
 package meldanor.training5;
 
-/**
- * @author Meldanor
- *
- */
-
 import java.util.ArrayList;
 import java.util.List;
 
 import aud.BinaryTree;
 
+/**
+ * <pre>
+ * Schreiben Sie die Klasse MyBinTree als Erweiterung der Klasse BinaryTree<T>.
+ * 
+ * Die Methode
+ * 
+ * public int maxWidth(),
+ * 
+ * soll für den gegebenen binären (Teil-)Baum die größte Breite (d.h. die maximale Anzahl von Knoten in der gleichen Ebene) zurück geben.
+ * 
+ * Für folgenden Binärbaum ist z. B. drei die größte Breite.
+ * 
+ * 
+ * Hinweise:
+ * 
+ *     Die Klasse BinaryTree<T> finden Sie unter den "Folien und Materialien" auf der Seite "Code/Beispiele".
+ *     Für den Backendtest darf diese Klasse nicht importiert werden.
+ *     Bei dem Backendtest müssen Sie auf die Visualisierung mit DotViewer und SingleStepper verzichten.
+ * </pre>
+ */
 public class MyBinTree<T> extends BinaryTree<T> {
 
     public MyBinTree(T data) {

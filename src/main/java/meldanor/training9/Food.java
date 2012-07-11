@@ -13,8 +13,21 @@ package meldanor.training9;
 import java.lang.reflect.Field;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Schreiben Sie die Klasse Food, die für jedes Lebensmittel einen Oberbegriff (z.B. Obst) und eine Bezeichnung (z.B. Melone) speichert. Weitere Merkmale können nach Belieben hinzugefügt werden.
+ *     Neben einem geeigneten Konstruktor und der Methode toString() ist in dieser Klasse eine Methode int hashCode() zu schreiben, die den Hashcode des Food-Objektes berechnet. Überlegen Sie, welche Klassenmerkmale Sie in die Berechnung des Hashwertes einbeziehen.
+ *     In einer weiteren Klasse Icebox soll neben geeigneten Attributen und Konstruktoren die Methoden
  * 
+ *     public void add(T obj)
+ * 
+ *     und
+ * 
+ *     public boolean contains(T obj)
+ * 
+ *     implementiert werden, die Ihre Hashtabelle nach einer Kollisionsstrategie Ihrer Wahl füllt bzw. darin sucht. Begründen Sie die Wahl Ihrer Strategie.
+ *     Erzeugen Sie im Testrahmen zehn verschiedene Food-Objekte, die Sie in Ihren Kühlschrank packen. Geben Sie zur Kontrolle den Inhalt Ihrer IceBox aus.
+ *     Welche alternativen Möglichkeiten zum Speichern und Wiederauffinden solcher Food-Objekte halten Sie auch noch für geeignet? Begründen Sie kurz.
+ * </pre>
  */
 public class Food {
 

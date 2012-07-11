@@ -20,8 +20,26 @@ import java.util.Set;
 import aud.Queue;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Von dem Geschichtsschreiber Josephus (1. Jhd.) ist uns ein interessantes mathematisches Problem überliefert:
  * 
+ * n Personen stehen in einem Kreis und werden solange mit einem k-silbigen Abzählvers ausgezählt, bis nur noch eine bestimmte Anzahl von Personen übrig bleibt. Josephus interessierte wie er und seine Freunde stehen müssen, damit sie alleine übrig bleiben.
+ * 
+ * Lösen Sie das Josephus-Problem mit Hilfe der Klasse Queue.
+ * 
+ *     Beschreiben Sie zunächst die Lösungsidee kurz mit Worten.
+ *     Schreiben Sie in der Klasse JosephusProblem eine Methode
+ * 
+ *     public static Queue<T> josephus(T[] children, int numbSyl),
+ * 
+ *     die eine Liste der Personen und die Anzahl der Silben übergeben bekommt und die vollständige Liste der "Ausgezählten" als Queue<T< zurück gibt (die Queue enthält also alle Personen in der "ausgezählten" Reihenfolge).
+ *     Es sollen 13 Personen mit einem 7-silbigen Abzählreim ausgezählt werden. An welche Positionen müssen sich Josephus und seine fünf Freunde stellen, damit sie übrig bleiben?
+ * 
+ * Hinweise:
+ * 
+ *     Hier finden sie AbstractQueue und Queue.
+ *     Die Klasse Queue steht im Backend zur Verfügung und darf nicht importiert werden.
+ * </pre>
  */
 public class JosephusProblem {
 

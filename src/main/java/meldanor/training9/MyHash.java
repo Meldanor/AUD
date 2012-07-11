@@ -17,6 +17,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeSet;
 
+/**
+ * <pre>
+ * Implementieren Sie eine Hash-Funktion, die 1001 Worte (alle Worte aus Faust 1, zufällig ausgewählt, ohne Dopplungen, alle ohne Umlaute und ß) in eine Hashtabelle der Größe 1249 (Primzahl) so einträgt (keine Verkettung der Überläufer), dass möglichst wenig Kollisionen entstehen. Zum Testen können Sie folgende Beispieldatei mit 1001 Worten (ww1.txt) von Namen (ohne ö, ä, ü, ß und Sonderzeichen) nutzen.
+ * 
+ * Hinweise:
+ * 
+ *     Nutzen Sie keine vordefinierten Klassen und Methoden zur Berechnung der Hash-Funktion wie z.B. die Klasse Hashtable oder die Methode hashCode aus der Klasse String.
+ *     Die Überprüfung Ihres Java-Programms zur Realisierung der obigen Hash-Funktion erfolgt im Rahmen der Übung an einer für Sie unbekannten Datei mit ebenfalls 1001 Datensätzen.
+ * 
+ * 
+ * Hinweise:
+ * 
+ *     Als Ergebnis des Backend-Tests mit der Datei w1.txt kommt bei korrektem Programm folgende automatische Rückmeldung:
+ * 
+ *     Your submission failed.
+ * 
+ *     testGetcol(JUnitTester): getCollisions: (number of collisions) 
+ * 
+ *     Das ist ein "erwünschte" Fehleranzeige, um die Ausgabe der Anzahl der Kollisionen zu erzwingen. Ihre Aufgabe kann damit nicht automatisch den Status "akzeptiert" bekommen, sondern erhält den Status "eingereicht".
+ * </pre>
+ */
 public class MyHash {
     public class BucketArray {
         // do not change because of Backendtest

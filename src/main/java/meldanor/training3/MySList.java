@@ -14,8 +14,34 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Schreiben Sie eine Klasse MySList, die ganzzahligen Daten als einfach verkettete Liste verwaltet und über die ungeraden Zahlen iterieren kann.
  * 
+ *     Sie können sich dabei an dem Konzept der Klasse SList orientieren.
+ *     Für den Backend-Test muss MySList eine Methode
+ * 
+ *     public void push_back(int obj)
+ * 
+ *     enthalten.
+ *     Schreiben Sie innerhalb der Klasse MySList die Klasse
+ * 
+ *     public class Iterator implements java.util.Iterator,
+ * 
+ *     mit den üblichen Funktionen wie hasNext() und next(). Dabei soll die Iteration nur über die ungeraden Elemente einer Liste von ganzen Zahlen erfolgen.
+ *     Schreiben Sie die Funktion
+ * 
+ *     public Iterator iterator(),
+ * 
+ *     in der eine Instanz Ihrer Klasse Iterator zurück geliefert wird.
+ * 
+ *     Testen Sie Ihren Iterator in main mit der foreach-Schleife.
+ *     Beisiel:
+ *     l sei [85,72,93,81,74,42]
+ *     In der Schleife "for (int el : l){...}" dürfen dann nur die Elemente 85, 93 und 81 durchlaufen werden.
+ * 
+ * Hinweis:
+ * Die Klasse SList finden Sie unter den "Folien und Materialien" auf der Seite "Code/Beispiele".
+ * </pre>
  */
 public class MySList implements Iterable<Integer> {
 

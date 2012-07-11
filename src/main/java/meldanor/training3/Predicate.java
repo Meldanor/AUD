@@ -10,10 +10,6 @@
 
 package meldanor.training3;
 
-/**
- * @author Meldanor
- * 
- */
 public interface Predicate {
     public boolean test(int el);
 }

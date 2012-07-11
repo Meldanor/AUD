@@ -13,8 +13,13 @@ package meldanor.training10;
 import java.util.Random;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Ein Knoten q ist erreichbar von p, wenn es einen Pfad der Länge n zwischen den beiden Knoten gibt. Die Adjazenzmatrix zeigt alle Erreichbarkeiten in einem Schritt (Kanten).
  * 
+ *     Die Erreichbarkeit von Knoten in 2 Schritten kann durch Multiplikation der Adjazenzmatrix mit sich selbst bestimmt werden. Prüfen Sie dies nach, indem Sie die Adjazenzmatrix des abgebildeten Graphen mit sich selbst multiplizieren. Was sagen die verschiedenen Werte in der Matrix aus?
+ *     Welche Aussage kann man machen, wenn die Adjazenzmatrix n-mal (n>2) mit sich selbst multipliziert wird?
+ *     Schreiben Sie ein Programm in Java zur Multiplikation von Adjazenzmatrizen. Welche Komplexität (O-Notation) in Abhängigkeit von der Größe der Matrix hat Ihr Algorithmus?
+ * </pre>
  */
 public class GraphConnectivity {
     public static int[][] matrixMult(int[][] a, int[][] b) {
