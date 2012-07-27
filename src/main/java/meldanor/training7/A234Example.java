@@ -15,8 +15,13 @@ import aud.util.DotViewer;
 import aud.util.SingleStepper;
 
 /**
- * @author Meldanor
- * 
+ * <pre>
+ *     Was ist ein 2-3-4 Baum?
+ *     Zeigen Sie anhand folgenden Beispiels, dass die Reihenfolge des Einfügens von Werten für die Struktur des 2-3-4 Baumes entscheidend ist:
+ *         Fügen Sie in folgender Reihenfolge die Zahlen 5, 1, 19, 25, 17, 21, 9, 15 und 14 in einen 2-3-4 Baum ein.
+ *         Bauen Sie nun in der veränderten Reihenfolge 25, 9, 14, 1, 17, 21, 15, 5 und 19 einen weiteren 2-3-4 Baum auf.
+ *         Kontrollieren Sie Ihre Schritte mit dem Dotviewer und SingleStepper.
+ * </pre>
  */
 public class A234Example extends SingleStepper {
     /*****************

@@ -1,5 +1,43 @@
+/*
+ * Copyright (C) 2012 Kilian Gaertner
+ * 
+ * Dieser Quelltext ist Open Source und kann von jedem verwendet werden, der 
+ * folgende Bedingung einhält:
+ * Jeder, der den Quelltext, ob in Teilen oder komplett,nutzt, muss dem Inhabenden
+ * des Copyrights eine Pizza spendieren, sollte derjenige dem Inhabenden des Copyrights
+ * begegnen.
+ */
+
 package meldanor.training6;
 
+/**
+ * <pre>
+ * Schreiben Sie eine Klasse SimpleTree<T extends Comparable<T>>, die einen binären Suchbaum für vergleichbare Werte aufbauen kann. Diese Klasse soll nur die folgenden Methoden enthalten.
+ * 
+ *     Die Methode
+ * 
+ *     public void insert(T obj)
+ * 
+ *     dient dem geordneten Einfügen von obj in den binären Suchbaum. Ist obj bereits enthalten, soll es nicht eingefügt werden.
+ *     Die Methode
+ * 
+ *     public boolean search(T obj)
+ * 
+ *     soll obj im Baum suchen und true(für gefunden) bzw. false (nicht enthalten) zurück liefern.
+ *     Die Methode
+ * 
+ *     public String toString()
+ * 
+ *     soll die Knoteninhalte des Baumes (beliebige Reihenfolge) anzeigen.
+ * 
+ * 
+ * 
+ * Hinweise:
+ * 
+ *     Die interne Klasse Node soll einen Verweis auf den Elternknoten zu enthalten.
+ *     Nutzen Sie keine der vordefinierten Klassen aus dem Ordner "Folien und Materialien", sondern bemühen Sie sich um eine möglichst einfache eigene Implementation, die nur die obigen Methoden enthält.
+ * </pre>
+ */
 public class SimpleTree<T extends Comparable<T>> {
 
     public class Node {

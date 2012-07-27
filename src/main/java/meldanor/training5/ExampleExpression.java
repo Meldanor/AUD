@@ -19,8 +19,13 @@ import aud.util.DotViewer;
 import aud.util.Graphvizable;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Machen Sie sich mit dem ExpressionParser und ExpressionTree vertraut, indem Sie verschiedene arithmetische Ausdrücke (mit den 4 Grundrechenarten) testen:
  * 
+ *     Geben Sie die Ausdrücke in den verschiedenen Ordnungen (inorder-, postorder und preorder) aus.
+ *     Berechnen Sie die Werte der Ausdrücke.
+ *     Visualisieren Sie die Ausdrücke mit dem DotViewer.
+ * </pre>
  */
 public class ExampleExpression {
 

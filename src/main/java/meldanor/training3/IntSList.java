@@ -15,8 +15,38 @@ import java.util.Iterator;
 import aud.SList;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Schreiben Sie eine Klasse
  * 
+ *     public class IntSList {
+ *        SList li;
+ *        ...
+ *     }
+ * 
+ *     mit dem Attribut li. Diese Klasse soll eine einfach verkettete Liste mit ganzzahligen Daten erstellen und filtern können. Sie können Funktionen aus SList nutzen, um eine derartige Liste aufzubauen, zum Beispiel:
+ * 
+ *     public void push_back(int obj){
+ *          li.push_back(obj);
+ *     }
+ *     Schreiben Sie eine Funktion
+ * 
+ *     public IntSList filter(Predicate p),
+ * 
+ *     die ein Prädikat p übergeben bekommt und alle Elemente - die dieses Prädikat erfüllen - in eine neue Liste aufsammelt (in der gefundenen Reihenfolge). Beachten Sie, dass es für li einen Iterator gibt (in SList definiert). Das Inteface
+ * 
+ *     public interface Predicate {
+ *        public boolean test(int el);
+ *     }
+ * 
+ *     ist gegeben.
+ *     Zum Test sollen aus der ganzzahligen Liste alle geraden Elemente heraus gefiltert werden.
+ *     Beisiel:
+ *     l sei [85,72,93,81,74,42]
+ *     l.filter(p) liefert dann die Liste [72,74,42]. Wie muss p definiert werden? Gibt es verschiedene Varianten?
+ * 
+ * Hinweis:
+ * Die Klasse SList finden Sie unter den "Folien und Materialien" auf der Seite "Code/Beispiele".
+ * </pre>
  */
 public class IntSList {
 

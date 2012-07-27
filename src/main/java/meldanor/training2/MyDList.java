@@ -15,8 +15,29 @@ import java.util.Iterator;
 import aud.DList;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Aus der Vorlesung kennen sie die doppelt verkettete Liste DList. Erweitern Sie diese Klasse um:
  * 
+ *     eine Instanzmethode
+ * 
+ *     public void append(MyDList li)
+ * 
+ *     zum Verketten zweier Listen. Dabei soll die aufrufende Liste verändert werden, die Liste li aber nicht.
+ *     und
+ *     um die Instanzmethode
+ * 
+ *     public void insert(int n, MyDList li)
+ * 
+ *     zum Einbetten der Liste li in die aufrufende Liste ab Position n (nullbasiert).
+ *     Testen Sie beide Methoden an geeigneten Beispielen.
+ * 
+ * Hinweise:
+ * 
+ *     Wird eine Liste an sich selbst angehängt, oder in sich selbst eingefügt, soll ihr Inhalt kopiert werden. Beispiel: li = [a, b]
+ *     li.append(li) == [a, b, a, b]
+ *     Hier finden sie DList und Graphvizable.
+ *     Die Klasse DList steht im Backend zur Verfügung und darf nicht importiert werden.
+ * </pre>
  */
 public class MyDList<T> extends DList<T> {
 

@@ -13,8 +13,31 @@ package meldanor.training5;
 import aud.BinaryTree;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Gegeben sei ein ungeordneter binärer Baum, dessen Knoten zufällig positive und negative ganze Zahlen als Schlüssel enthalten. Der Wert eines Teilbaums (das ist der vollständige Baum unter diesem Knoten) ist die Summe aller seiner Schlüsselwerte.
  * 
+ *  Der Wert eines Pfades (das ist der Weg von der Wurzel des Baumes bis zu einem Blatt) ist die Summe aller Schlüsselwerte, die auf diesem Pfad liegen. Da auch negative Schlüssel erlaubt sind, können größere Teilbäume oder längere Pfade durchaus kleinere Werte haben als ihre Teilbäume.
+ * 
+ *  Notieren Sie für den vorgegebenen Baum die Werte der Teilbäume und die Werte der Pfade.
+ *  Schreiben Sie die Java-Methoden
+ *  public int height()
+ * 
+ *  für die Berechnung der Höhe des Teilbaumes,
+ *  public int maxSum()
+ * 
+ *  für die Ermittlung des maximalen Teilbaums und
+ *  public int maxPath()
+ * 
+ *  für das Finden des maximalen Pfadwertes von der Wurzel bis zu einem Blatt.
+ * 
+ * 
+ * 
+ *  Hinweise:
+ * 
+ *  Die Klasse BinaryTree<T> finden Sie unter den "Folien und Materialien" auf der Seite "Code/Beispiele".
+ *  Für den Backendtest darf diese Klasse nicht importiert werden.
+ *  Bei dem Backendtest müssen Sie auf die Visualisierung mit DotViewer und SingleStepper verzichten.
+ * </pre>
  */
 public class IntBinTree extends BinaryTree<Integer> {
 

@@ -10,13 +10,26 @@
 
 package meldanor.training8;
 
-/**
- * @author Meldanor
- *
- */
 import java.util.ArrayList;
 import java.util.Comparator;
 
+/**
+ * <pre>
+ * Schreiben Sie eine Klasse MinHeap<T extends Comparable<T>> mit einer geeigneten Datenstruktur (java.util.ArrayList) und den Methoden
+ * 
+ *     public ArrayList<T> getHeap(): liefert den internen Heap zurück,
+ *     public int getSize(): gibt die Anzahl der Einträge an,
+ *     public boolean isEmpty(): gibt an, ob der Heap leer ist,
+ *     public void downHeap(int k): stellt die Heap-Eigenschaft durch ein "Versickern" des Elementes im Knoten k her,
+ *     public void insert(T obj): fügt ein Element in den Heap ein.
+ * 
+ * Testen Sie diese Methode, indem Sie aus den Buchstaben
+ * 
+ * X, T, O, G, S, M, N, A, E, R, A und I
+ * 
+ * einen MinHeap erzeugen.
+ * </pre>
+ */
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class HeapSort<T extends Comparable<T>> {
 

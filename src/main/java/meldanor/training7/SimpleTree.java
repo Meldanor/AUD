@@ -1,5 +1,6 @@
 package meldanor.training7;
 
+// © Ilona Bluemel
 public class SimpleTree<T extends Comparable<T>> {
     public class Node {
         protected T key;

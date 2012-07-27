@@ -11,8 +11,22 @@
 package meldanor.training2;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Vervollständigen Sie die Klasse MyCircle (siehe Antwortvorlage). Es soll ein doppelt verketteter Ring analog der doppelt verketteten Liste DList erstellt werden.
  * 
+ * Ähnlich wie bei einer Kette gibt es einen Verschluss head_. Hier kann man vor oder nach head_ die Kette erweitern bzw. abbauen. Die Eigenschaft eines Rings - head_ zeigt auf das erste Element der Kette und das letzte Element der Kette zeigt auf head_ - ist jeweils abzusichern. Schreiben Sie die Methoden
+ * 
+ *     public int size()
+ * 
+ *     zur Bestimmung der Anzahl Elemente in der Kette,
+ *     public void push_back(T obj),
+ * 
+ *     die ein Element am "Ende" der Kette (also vor head_)einfügt (und die Kette wieder verschließt)
+ *     und
+ *     public void pop_front(),
+ * 
+ *     die ein Kettenglied aus dem Anfang der Kette entfernt.
+ * </pre>
  */
 public class MyCircle<T> {
 

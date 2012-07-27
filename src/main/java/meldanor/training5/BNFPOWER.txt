@@ -1,11 +1,13 @@
+/* Erweitern Sie folgende BNF um power, der Rechenoperation für das "Potenzieren": */ 
+
 <expression> ::= <sum>
 <sum>        ::= <product> |
                  <product> "+" <sum> |
                  <product> "-" <sum>
 <product>    ::= <factor> |
                  <factor> "*" <product> |
-                 <factor> "/" <product>
-<factor>     ::= <number> | <symbol> |
+                 <factor> "/" <product> |
+<factor>     ::= <number> | <symbol> | <power> |
                  "-" <factor> | "+" <factor> |
                  "(" <expression> ")"
-<power>		 ::= <sum> "^" <sum>
+<power>		 ::= <factor> "^" <factor>

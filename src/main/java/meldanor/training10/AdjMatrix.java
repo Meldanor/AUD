@@ -14,8 +14,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Wir betrachten im Folgenden Adjazenzmatrizen vom Typ int[][] m. Die Indizierung der Knoten beginnt bei Null. Der Knotenname sei sein Index. Schreiben Sie für diese Matrizen verschiedene Methoden:
  * 
+ *     Bestimmung des Eingangsgrades eines übergebenen Knotens mit der Methode
+ * 
+ *     public static int inDegree(int k, int[][] m)
+ * 
+ *     Bestimmung des Ausgangsgrades eines übergebenen Knotens mit der Methode
+ * 
+ *     public static int outDegree(int k, int[][] m)
+ * 
+ *     Ausgabe aller adjazenten Knoten eines gegebenen Knotens mit der Methode
+ * 
+ *     public static List adjacent(int k, int[][] m)
+ * 
+ *     Ein Dreieck in einem Graph ist ein Zyklus der Länge 3.
+ *         Untersuchen Sie, ob der durch die folgende Adjazenzmatrix gegebene Graph Dreiecke enthält und geben Sie diese gegebenenfalls an.
+ * 
+ *                   | 0 1 0 0 1 |
+ *                   | 0 0 0 1 0 |
+ *               A = | 0 1 0 0 0 |
+ *                   | 0 0 1 0 0 |
+ *                   | 0 0 0 1 0 |
+ * 
+ *         Schreiben Sie eine Java-Methode
+ * 
+ *         public static boolean hasTriangle(int[][] m),
+ * 
+ *         in der Sie für eine gegebene Adjazenzmatrix entscheiden können, ob sie Dreiecke enthält oder nicht.
+ *     Überprüfen Sie Ihre Methoden an geeigneten Testdaten.
+ * </pre>
  */
 public class AdjMatrix {
 

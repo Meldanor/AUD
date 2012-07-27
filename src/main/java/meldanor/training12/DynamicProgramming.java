@@ -14,8 +14,17 @@ import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Was versteht man unter dynamischer Programmierung?
+ *     Schreiben Sie eine Java-Methode
  * 
+ *     public static int f (int a, int b),
+ * 
+ *     die die durch die Rekursionsformel
+ *     f(a, b) = f(a-1, b) + 2*f(a, b-1) mit f(a, 0) = f(0, b) = 1,
+ *     definierte Funktion f mit Hilfe der dynamischen Programmierung berechnet.
+ *     Begründen Sie kurz (anhand der Komplexität in O-Notation), wieso diese Lösung mittels dynamischer Programmierung effizienter ist als eine entsprechende rekursive Lösung.
+ * </pre>
  */
 public class DynamicProgramming {
 

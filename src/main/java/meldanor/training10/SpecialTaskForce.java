@@ -14,8 +14,25 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Was ist ein Graph? Erläutern Sie die unterschiedlichen Arten von Graphen.
+ *     Geben Sie für den ungerichteten Graphen G = (V, E) mit
+ *     V = {1, 2, 3, 4, 5},
+ *     E = {(1, 2), (1, 3), (1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (4, 5)}
+ *     eine bildliche Darstellung an.
+ *     Notieren Sie für diesen Graphen
+ *         die Kantenliste,
+ *         die Knotenliste,
+ *         die Adjazenzmatrix,
+ *         die Adjazenzliste
+ *     und geben Sie die entsprechenden Datenstrukturen in Java an.
+ *     Geben Sie die Algorithmen (in Java) an, die die Überführung
+ *         einer Kantenliste in eine Adjazenzmatrix,
+ *         eine Kantenliste in eine Adjazenzliste und
+ *     realisieren. Wie hoch ist jeweils der Aufwand in O-Notation?
  * 
+ * Hinweis: Die Antwort für Teil b) dieser Aufgabe brauchen Sie nicht im System einzureichen. Machen Sie sich hierzu Notizen auf einem Blatt Papier und bringen Sie das zur Übung mit.
+ * </pre>
  */
 public class SpecialTaskForce {
 

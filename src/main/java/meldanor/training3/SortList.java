@@ -17,8 +17,35 @@ import java.util.Random;
 import aud.SList;
 
 /**
- * @author Meldanor
+ * <pre>
+ * In dieser Aufgabe sollen Objekte in eine Liste geordnet eingefügt werden. Erklären Sie kurz, wie das Einfügen in die geordnete Liste erfolgt.
  * 
+ *     Schreiben Sie eine Klasse
+ * 
+ *     public class SortList<T extends Comparable<T>>
+ * 
+ *         mit dem Attribut
+ *         SList<T> list,
+ *         einem Konstruktor, der eine leere Liste list erzeugt und
+ *         Schreiben Sie eine Methode
+ * 
+ *         public boolean insert(T obj),
+ * 
+ *         die ein neues Element obj sortiert in die Liste list einfügt. Der Vergleich zweier Objekte vom Typ T erfolgt mit obj1.compareTo(obj2). Es sollen keine doppelten Werte in die Liste aufgenommen werden. Ist ein Wert bereits in der Liste enthalten, soll false zurückgegeben werden, im anderen Fall true.
+ *         Testen Sie SortList für Zufallszahlen vom Typ int.
+ *     Geben Sie die Vor- und Nachbedingungen Ihres insert-Algorithmus an. Wie lautet die Schleifen-Invariante?
+ * 
+ * Hinweise:
+ * 
+ *     Die Methode
+ * 
+ *       public String toString() {
+ *             return list.toString();
+ *       }
+ * 
+ *     muss wegen der Backend-Kontrolle in der Klasse SortList enthalten sein.
+ *     Die Klasse SList finden Sie unter den "Folien und Materialien" auf der Seite "Code/Beispiele". Die Klasse SList steht im Backend zur Verfügung und darf für die automatische Backend-Kontrolle nicht importiert werden.
+ * </pre>
  */
 public class SortList<T extends Comparable<T>> {
 

@@ -10,14 +10,38 @@
 
 package meldanor.training7;
 
-/**
- * @author Meldanor
- *
- */
 import java.util.Iterator;
-
 import aud.Queue;
 
+/**
+ * <pre>
+ * Schreiben Sie die Klasse
+ * 
+ *  public class RangeTree<T extends Comparable<T>>
+ *  extends SimpleTree<T> implements Iterable<T>
+ * 
+ *  als Erweiterung von SimpleTree mit einem speziellen TreeIterator.
+ * 
+ *  Die Klasse
+ *  public class TreeIterator implements java.util.Iterator<T>
+ *  muss die üblichen Funktionen wie hasNext() und next() enthalten.
+ *  Mit TreeIterator soll über alle Werte aus einem gegebenen Bereich von begin_ bis end_ in geordneter Reihenfolge iteriert werden können. Dabei sollen Sie möglichst effizient vorgehen, d.h. nutzen Sie die Sortierreihenfolge aus.
+ * 
+ *  Beispiel:
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  Beim Iterieren im Bereich von 5 bis 11 sollen die Werte 5,7,9 und 11 in dieser Reihenfolgen durchlaufen werden.
+ * 
+ * 
+ *  Die Klasse SimpleTree (Blatt06) mit der Methode public void insert(T obj) steht im Backend zur Verfügung und darf für den Test nicht importiert werden.
+ *  Der Knoten (Node) des SimpleTree im Backend verfügt außerdem über eine getParent() Methode.
+ * </pre>
+ */
 public class RangeTree<T extends Comparable<T>> extends SimpleTree<T> implements Iterable<T> {
     public T begin_, end_;
 
@@ -33,6 +57,7 @@ public class RangeTree<T extends Comparable<T>> extends SimpleTree<T> implements
         end_ = e;
     }
 
+    // © Sedgewick
     public class TreeIterator implements Iterator<T> {
 
         private Queue<T> dataQueue;

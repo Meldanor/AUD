@@ -14,8 +14,30 @@ import java.util.Stack;
 import java.util.regex.Pattern;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Eine gegebene Zeichenkette (String) ist ein Palindrom, wenn sie vorwärts und rückwärts gelesen gleich ist. Schreiben Sie eine Methode
  * 
+ * public static boolean isPalindrome(String str),
+ * 
+ * die bei einem übergebenen String str ermittelt, ob str ein Palindrom ist oder nicht. Dabei sollen in str Leer-, Sonder- und Satzzeichen überlesen werden. Außerdem soll die Unterscheidung von Groß- und Kleinbuchstaben entfallen. Benutzen Sie bei der Lösung nicht die vordefinierte Methode reverse, sondern die Klasse Stack<T>
+ * 
+ * Als Testdaten können Sie folgende Palindrome benutzen:
+ * 
+ *     Reliefpfeiler
+ *     Madam
+ *     Lagerregal
+ *     Marktkram
+ *     Ein Esel lese nie.
+ *     Gurken hol ohne Krug!
+ *     Na, Fakir, Paprika-Fan? 
+ *     O, Streit irritiert so!
+ * 
+ * Hinweise:
+ * 
+ *     - Hier finden Sie AbstractStack und Stack aus der Vorlesung. Die Klasse Stack<T> steht im Backend zur Verfügung und darf nicht importiert werden.
+ *     - Sie können aber auch die vordefinierte Klasse java.util.Stack<T> nutzen. Dann müssen Sie aber die Klasse Stack importieren mit
+ *       import java.util.Stack;
+ * </pre>
  */
 public class Palindrom {
 

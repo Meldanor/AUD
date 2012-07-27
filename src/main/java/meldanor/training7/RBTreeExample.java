@@ -15,8 +15,12 @@ import aud.util.DotViewer;
 import aud.util.SingleStepper;
 
 /**
- * @author Meldanor
- * 
+ * <pre>
+ *     Was ist ein Rot-Schwarz-Baum? Welche Eigenschaften hat er?
+ *     Führen Sie von Hand schrittweise den Algorithmus zum Aufbau eines Rot-Schwarz-Baums mit nacheinander den Elementen der Liste [6,7,3,4,2,1] aus. Geben Sie alle Zwischenschritte an. Wann entstehen Rot-Rot-Verstösse? Welcher Baum entsteht?
+ *     Führen Sie zum Vergleich den schrittweisen Aufbau eines AVL-Baums mit nacheinander den Elementen der Liste [6,7,3,4,2,1] aus. Vergleichen Sie mit a).
+ *     Können 2-3-4-Bäume durch Rot-Schwarz-Bäume implementiert werden? Wenn ja, welche Korrespondenzen existieren zwischen Rot-Schwarz-Tree und 2-3-4-Tree?
+ * </pre>
  */
 public class RBTreeExample extends SingleStepper {
 

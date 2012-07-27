@@ -14,8 +14,18 @@ import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Beschreiben Sie im Pseudocode den Algorithmus, um den Binomialkoeffizienten unter Ausnutzung der Rekursionsformel
+ *     mit Hilfe der dynamischen Programmierung zu berechnen. Wie groß ist die Komplexität in O-Notation in Abhängigkeit von n und k?
  * 
+ *     Geben Sie zur Illustration der Arbeitsweise des Algorithmusses die berechnete Tabelle an für die Eingaben n = 7 und k = 5.
+ *     Formulieren Sie für die Berechnung des Binomialkoeffizienten mit dynamischer Programmierung die Java-Methode
+ * 
+ *     public static int binom(int n, int k)
+ * 
+ *     Überlegen Sie, wie die Anzahl der Rechenschritte reduziert werden kann.
+ *     Vergleichen Sie den Aufwand zur Berechnung mit einer rekursiven Lösung, indem Sie die obige Rekursionsformel direkt (Baumrekursion) verwenden.
+ * </pre>
  */
 public class MyBinom {
 

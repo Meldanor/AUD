@@ -15,8 +15,11 @@ import aud.util.DotViewer;
 import aud.util.SingleStepper;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Erklären Sie den Begriff AVL-Baum. Weshalb ist es erforderlich, binäre Bäume auszugleichen?
  * 
+ *     Erläutern Sie den Algorithmus für das Einfügen von Knoten in einen AVL-Baum am Beispiel des Einfügens der natürlichen Zahlen 14, 15, 17, 7, 5, 10 und 16 in dieser Reihenfolge. Skizzieren Sie den AVL-Baum nach jedem Einfügen eines Elementes und kontrollieren Sie Ihre Schritte mit dem Dotviewer und SingleStepper.
+ * </pre>
  */
 public class AVLExample extends SingleStepper {
 

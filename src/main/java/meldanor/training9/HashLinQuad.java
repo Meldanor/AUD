@@ -14,8 +14,23 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * @author Meldanor
+ * <pre>
+ *     Schreiben Sie eine einfache Klasse HashLinQuad mit den Attributen
+ *         private int[] table;
+ *         private int size; // current number of elements
+ *         private int capacity;
+ *     und den Methoden
+ *         public int addLin(int obj)
  * 
+ *         für das das lineare Sondieren
+ *         und
+ *         public int addQuad(int obj)
+ * 
+ *         für das das quadratische Sondieren
+ *     zum Einfügen von obj in die Hashtabelle table. Sie können vereinfachend davon ausgehen, dass die capacity der Tabelle table ausreicht, um alle Werte aufzunehmen.
+ *     Zum Test sollen 1000 zufällige Integer-Werte erzeugt werden. Diese Werte sollen nach beiden Kollisionsstrategien jeweils in ein Array der Größe 1249 eingefügt werden (als Hashcode können Sie den int-Wert nutzen).
+ *     Zählen Sie jeweils die Anzahl der Kollisionen und vergleichen Sie daran beide Strategien.
+ * </pre>
  */
 public class HashLinQuad {
     // simple Hashtable with linear/quadratic probing

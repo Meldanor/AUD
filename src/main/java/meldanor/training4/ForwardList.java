@@ -14,8 +14,40 @@ import java.util.Iterator;
 import java.util.Stack;
 
 /**
- * @author Meldanor
+ * <pre>
+ * Schreiben Sie eine Klasse
  * 
+ * public class ForwardList implements Iterable,
+ * 
+ * die Daten als einfach verkettete Liste verwaltet und rückwärts über diese iterieren kann, obwohl die Knoten keinen Rückwärtszeiger haben.
+ * 
+ *     Sie können sich dabei an dem Konzept der Klasse SList orientieren.
+ *     Für den Backend-Test muss List eine Methode
+ * 
+ *     public void push_front(T obj)
+ * 
+ *     enthalten.
+ *     Schreiben Sie zunächst eine rekursive Methode
+ * 
+ *     public void public void backTraverse(),
+ * 
+ *     die die Daten der Liste rückwärts ausgibt (Ausgabe mit System.out.print(...)).
+ *     Schreiben Sie innerhalb der Klasse ForwardList die Klasse
+ * 
+ *     public class BackIterator implements java.util.Iterator,
+ * 
+ *     mit den üblichen Funktionen wie hasNext() und next(). Dabei soll die Iteration rückwärts über die Elemente der Liste erfolgen (unter Nutzung eines Stacks).
+ *     Schreiben Sie die Funktion
+ * 
+ *     public BackIterator iterator(),
+ * 
+ *     in der eine Instanz Ihrer Klasse BackIterator zurück geliefert wird.
+ * 
+ *     Testen Sie Ihren BackIterator in main mit der foreach-Schleife.
+ *     Beisiel:
+ *     l sei [1,2,3,4,5]
+ *     In der Schleife "for (int el : l){...}" werden dann die Elemente in der Reihenfolge 5,4,3, 3,2,1 durchlaufen.
+ * </pre>
  */
 public class ForwardList<T> implements Iterable<T> {
 

@@ -10,12 +10,27 @@
 
 package meldanor.training8;
 
-/**
- * @author Meldanor
- *
- */
 import aud.util.Graphvizable;
 
+/**
+ * <pre>
+ *         Vervollständigen sie die Klasse BTree um die Methode
+ * 
+ *         public boolean insert(Key key)
+ * 
+ *         zum Einfügen eines key in den BTree.
+ *         Fügen Sie nacheinander in dieser Reihenfolge die Integer-Werte 7,19, 23, 4, 12, 17, 8, 11, 2 , 9 und 13 mit insert in einen anfangs leeren BTree der Ordnung 2 ein. Visualisieren Sie den BTree in den einzelnen Etappen mit dem DotViewer. Achtung: Visualisierung mit DotViewer beim Einreichen auskommentieren!
+ *         Schreiben eine weitere Methode
+ * 
+ *         public int height()
+ * 
+ *         zur Ermittlung der Höhe des B-Baumes.
+ *         Testen Sie diese Methode, indem Sie eine Millionen zufällig generierte Werte bei unterschiedlichen Seitengrößen in den B-Baum einfügen und die jeweilige Höhe bestimmen (ohne Visualisierung mit DotViewer!). 
+ * 
+ * Hinweis:
+ * Die Klasse KTreeNode steht im Backend zur Verfügung und darf beim automatischen Test nicht importiert werden.
+ * </pre>
+ */
 public class BTree<Key extends Comparable<Key>> implements Graphvizable {
 
     KTreeNode<Key> root_;
@@ -43,7 +58,7 @@ public class BTree<Key extends Comparable<Key>> implements Graphvizable {
     }
 
     protected boolean insert(KTreeNode<Key> node, Key key) {
-        
+
         // It could be usefull to use the recursive structur to implement
         // insert.
         // This method can be empty if your implementation does not need it.
